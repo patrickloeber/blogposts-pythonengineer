@@ -3,7 +3,7 @@ title: How to delete files and folders in Python
 date: 2021-12-22 00:00
 description: Delete files in python using os and shutil.
 tags: Python, Basics
-path: copy-files-python
+path: delete-files-python
 author: Pratik Choudhari
 ---
 
