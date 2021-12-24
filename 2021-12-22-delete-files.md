@@ -8,7 +8,7 @@ author: Pratik Choudhari
 ---
 
 In a previous blog, we discussed how to copy files using python. 
-In this article, we will see how [*os*](https://docs.python.org/3/library/os.html) and [*shutil*](https://docs.python.org/3/library/shutil.html) libraries can be used to delete files and folders on a computer. 
+In this article, we will see how [*os*](https://docs.python.org/3/library/os.html), [*pathlib*](https://docs.python.org/3/library/pathlib.html ) and [*shutil*](https://docs.python.org/3/library/shutil.html) libraries can be used to delete files and folders on a computer. 
 Both libraries come under standard python packages, so there’s no installation required. 
 
 Let’s dive straight in.
@@ -25,7 +25,7 @@ Errors thrown:
 - IsADirectoryError
 - FileNotFoundError
 
-Examples:
+Example:
 
 ```python
 import os
@@ -37,20 +37,53 @@ os.remove(“/home/user/Documents/notes.txt”)
 Working of this function is similar to [rmdir](https://www.computerhope.com/unix/urmdir.htm) in linux. 
 `directory_path` should be a python path-like object. 
 If the directory specified in the path is not empty an error will be raised, implying that only empty directories can be deleted. 
-pathlib.Path.rmdir() is an alternative to os.rmdir() with the exact same behaviour.
 
 Errors thrown:
 - FileNotFoundError
 - OSError
 
-Examples:
+Example:
 
 ```python
 import os
 os.rmdir(“/home/user/Desktop/Images”) 
 ```
 
-### 3. `shutil.rmtree(directory_path)`
+### 3. `pathlib.Path.rmdir()`
+ 
+pathlib's `Path.rmdir()` is an alternative to `os.rmdir()`. Under the hood pathlib extends `os.rmdir()` functionality. Directory to be deleted must be empty.
+
+Errors thrown:
+- FileNotFoundError
+- OSError
+
+Example:
+
+```python
+import pathlib
+
+path = pathlib.Path(“/home/user/Desktop/Images”) # create a path object first, rmdir() does not take any arguments
+path.rmdir() 
+```
+
+
+### 4. `pathlib.Path.unlink(missing_ok=False)`
+ 
+Deletes a file or [symlink](https://www.computerhope.com/jargon/s/symblink.htm). If missing_ok is True then FileNotFoundError will be suppressed. In linux based systems, symlinks can be of same name as target file, whereas in windows, shortcuts have a .lnk extension. 
+
+Errors thrown:
+- FileNotFoundError
+
+Examples:
+
+```python
+import pathlib
+
+path = pathlib.Path(“/home/user/Desktop/sample_pdf.pdf”)
+path.unlink()
+```
+
+### 5. `shutil.rmtree(directory_path)`
 
 Shutil is associated with file operations and also includes a function that can be used to delete a directory and all of its contents recursively. 
 It is similar to Linux [rm -rf](https://www.computerhope.com/unix/urm.htm) command. The directory path provided must not be a [symlink](https://www.computerhope.com/jargon/s/symblink.htm).
@@ -59,7 +92,7 @@ Errors thrown:
 - FileNotFoundError
 - NotADirectoryError
 
-Examples:
+Example:
 
 ```python
 import shutil
