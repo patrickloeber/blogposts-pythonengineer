@@ -1,0 +1,17 @@
+name: Copy
+on: push
+jobs:
+  copy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Copy folders
+      uses: andstor/copycat-action@v3
+      with:
+        personal_token: ${{ secrets.PERSONAL_TOKEN }}
+        src_path: /Content/
+        dst_path: /.
+        dst_owner: python-engineer
+        dst_repo_name: publishsite
+        src_branch: main
+        dst_branch: master
+        file_filter: "*.md"
