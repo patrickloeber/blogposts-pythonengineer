@@ -1,16 +1,33 @@
-# blogposts-pythonengineer"
+# Articles for python-engineer.com
 
-Repo with articles for the python-engineer.com website
+Repo with articles for the python-engineer.com website.
+
+New authors are welcome! Please read the contribution guide and instructions below in oreder to get started.
+
+## Author contributions
+
+All contributors are credited in the authors page
+([https://www.python-engineer.com/authors/](https://www.python-engineer.com/authors/)) and get a dedicated page, e.g. [https://www.python-engineer.com/authors/patrick/](https://www.python-engineer.com/authors/patrick/).
+
+## Contribution Guide
+
+You can find possible topics on the [Issues](https://github.com/python-engineer/blogposts-pythonengineer/issues) page. You can take an existing one or suggest your own topic by opening a new issue.
+
+Once the article is written, open a new Pull Request for it.
 
 ## Instructions
-An example markdown file is [2021-07-21-python-for-loops.md](2021-07-21-python-for-loops.md)
 
-## File name
+Articles are written in [Markdown format](https://docs.github.com/en/github/writing-on-github/).
+An example markdown file is [2021-07-21-python-for-loops.md](Content/blog/2021-07-21-python-for-loops.md).
+
+## File name and folder
 Use a name in the following format:
 
 ```
 YYYY-MM-DD-some-topic-name.md
 ```
+
+If not specified otherwise, articles should be created in the folder [Content/blog](Content/blog).
 
 ## Markdown Front Matter
 Markdown frontmatter must have these fields.
@@ -25,7 +42,7 @@ author: Patrick Loeber
 ---
 ```
 
-(Path does not have to be exactly the same as used in the filename)
+(Don't worry about tags and path too much, I can easily adapt this during the pull request review.)
 
 ## Code snippets
 Code snippets have to be written like this (inspect the raw file to see the markdown syntax):
@@ -33,3 +50,25 @@ Code snippets have to be written like this (inspect the raw file to see the mark
 ```python
 print("Hello World")
 ```
+
+## Credit sources
+
+#### Credits
+If your article or code is heavily inspired by someone else, you should credit them.
+
+This includes text AND code taken from other blogs or official documentation, GitHub, Stack Overflow, and all similar resources. If you're copying and pasting something from a source like that, make sure you credit it and link to it.
+
+#### Quotes
+If you are paraphrasing or quoting directly something someone else said (in another article, video, or any other medium), you should credit them by adding a link to the original source and use quote formatting (use a '>'):
+
+> "Hi, I'm Patrick. I’m a passionate Software Engineer who loves Machine Learning, Computer Vision, and Data Science."
+> (Source: [Patrick Loeber](https://www.python-engineer.com/about/))
+
+
+#### Tip
+It's always better to use your own words and own code examples when you can. So rather than copy/pasting and quoting other sources, try to digest the information and explain it in your own words.
+
+This way you won't risk plagiarizing someone else's work.
+
+## Thank you
+Thank you for sharing your knowledge with the Python community!
