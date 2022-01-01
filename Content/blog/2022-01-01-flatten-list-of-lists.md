@@ -1,7 +1,7 @@
 ---
 title: How to flatten a list of lists in Python
 date: 2022-01-01 00:00
-description: Know how vanilla Python and a few standard libraries can be used to flatten a list of lists.
+description: Know how vanilla Python and a few libraries can be used to flatten a list of lists.
 tags: Python, Basics
 path: flatten-list-of-lists
 author: Pratik Choudhari
