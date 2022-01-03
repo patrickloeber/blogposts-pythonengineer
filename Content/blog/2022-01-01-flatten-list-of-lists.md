@@ -52,7 +52,7 @@ for sublist in nested_list:
   flat_list.extend(element)
 ```
 
-### 2. itertools.chain(*nested_list)
+### 2. itertools.chain(*nested\_list)
 Itertools is part of python’s standard libraries and provides a method to create a flat list. 
 The chain method takes lists as arguments, therefore a `*` is used to unpack the list, read more about *args [here](https://www.python-engineer.com/blog/args-kwargs/), the return value is an iterator and not a list, using list() it is forced to yield all elements.
 ```python
@@ -63,7 +63,7 @@ flat_list = itertools.chain(*nested_list)
 flat_list  = list(flat_list)
 ```
 
-### 3. itertools.chain.from_iterable(nested_list)
+### 3. itertools.chain.from\_iterable(nested\_list)
 Similar to itertools.chain() but takes a nested list as argument.
 
 ```python
@@ -74,7 +74,7 @@ flat_list = itertools.chain.from_iterable(nested_list)
 flat_list  = list(flat_list)
 ```
 
-### 4. functools.reduce(function, nested_list)
+### 4. functools.reduce(function, nested\_list)
 reduce() works by applying a function to two elements of an iterable cumulatively.
 
 ```python
@@ -94,7 +94,7 @@ nested_list = [[1, 2, 3], [4, 5, 6], [7], [8, 9]]
 flat_list = reduce(operator.concat, nested_list)
 ```
 
-### 5. numpy.concatenate(nested_list)
+### 5. numpy.concatenate(nested\_list)
 Returns merged list instead of an iterator 
 ```python
 import numpy
@@ -103,7 +103,7 @@ nested_list = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 flat_list = numpy.concatenate(nested_list)
 ```
 
-### 6. numpy.array(nested_list).flat
+### 6. numpy.array(nested\_list).flat
 Numpy arrays have a flat property which can be used to get an iterator for a flattened array but it only works if lists inside a nested list are of same lengths.
 
 ```python
