@@ -22,9 +22,9 @@ And nested lists:
 ```
 
 There are several ways in which a nested list can be unpacked and made into a flat list, some of these approaches don’t need a library whereas others use [itertools](https://docs.python.org/3/library/itertools.html), 
-[functools](https://docs.python.org/3/library/functools.html) and [numpy](https://numpy.org/).
+[functools](https://docs.python.org/3/library/functools.html), and [numpy](https://numpy.org/).
 
-### 1. Looping
+### 1. Looping and List comprehension
 This is the easiest way to flatten a list. It uses a for loop to iterate over the main list and another nested for loop to iterate over the element of the main list.
 ```python
 nested_list = [[1, 2, 3], [4, 5, 6], [7], [8, 9]]
@@ -38,6 +38,11 @@ print(flat_list)
 Output:
 ```console
 [1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
+
+A shorter version of this uses list comprehension:
+```python
+flat_list = [element for sublist in nested_list for element in sublist]
 ```
 
 Alternatively, extend() can be used to create the resulting list without nested loops
