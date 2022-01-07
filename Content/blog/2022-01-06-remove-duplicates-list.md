@@ -1,14 +1,14 @@
 ---
-title: How to remove duplicate elements from a list in Python
-date: 20221-01-06 00:00
-description: Three ways in which lists in Python can be deduplicated.
+title: How to remove duplicate elements from a List in Python
+date: 2022-01-06 00:00
+description: Three ways in which Lists in Python can be deduplicated.
 tags: Python, Basics
 path: remove-duplicates-list
 author: Pratik Choudhari
 ---
 
-A list data structure is capable of storing elements of different data types and multiple occurrences. 
-In some cases, lists need to be deduplicated, which means we have to remove copies of elements from the data structure.
+A list data structure is capable of storing elements of different data types and multiple occurrences. In some cases, lists need to be deduplicated, which means we have to remove copies of elements from the data structure.
+
 In this article, we will see how duplicates can be removed from a list using plain python and [numpy](https://numpy.org/)
 
 ### 1. Using Set
