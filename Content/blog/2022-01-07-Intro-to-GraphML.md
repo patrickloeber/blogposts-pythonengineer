@@ -45,3 +45,15 @@ Where `G` represents a graph, and `V` represents a collection of nodes: `{ v1, v
 <p align="justify">
 So this is how we generally represent a graph structure. Now we might have read in some courses like data structures, that graphs are one of the essential data structures for path finding algorithms. This is true. But if we see, then we generally deal with nodes, which are often represeneted as some numbers like 1,2,3 ... or some letters like A,B,C, ... But in Machine learning, the nodes we see, do not contains some single numbers or letters. We represent each of the nodes and sometimes the edges as vectors. And so, these nodes containing some vectors within them are known to be as node features. If edges are also represented as some vectors, then we define that as edge features. Now, sometime people gets confused, by considering edge features representing the connections of the graphs. This is wrong assumption. Edge features are some kind of optional features, we use in graph ML other than node features, which helps us to learn the underlined reprsentation in a more clear way. But these edge features are not the reprentatives of the connection within the nodes. Connections are represented as Adjacency matrix. For example, we can think a chemical molecule as a graph. The nodes represent the atoms, and the edges represents the different types of the bonds, like single bond, double bond etc. So for representing the types of the bond, we require some features, that is represented through edge features. Edge features are not important as node features everytime. Also we will discuss more on details in the later parts.
 </p>
+
+## Node features
+<p align="justify">
+<img src= 
+"Assets/Anindya/node_feat.png" 
+         alt="Food and Computer Image" 
+         align="right"
+         width="300" height="300"> 
+
+Node features are the fundamental input for graph machine learning models. This is simply the feature vector a node of a graph is carrying. Mathematically a graph `G = (V, E)` where, `V` is the set of nodes. All the nodes v those belongs to `V` are a `d-dimensional` vector. Those d-dimensional vectors are the node feature vectors. So if there are N Nodes and every nodes is having d-dimensional features, so the input matrix X is a N x d matrix. Some simple example might include, suppose in a molecular graph, the nodes are the atoms, and each atoms may have several properties like:
+{atomic num, mass num, atomicity, hybridization …}, these are some numerical value, and when stacked together turns out to be a vector.
+</P>
