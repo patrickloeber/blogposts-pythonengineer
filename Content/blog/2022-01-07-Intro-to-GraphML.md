@@ -81,12 +81,6 @@ Edge features are similar to edge features, but **Edge features do not represent
  ```
   All of these when stacked upon each others forms a vectors of suppose `m` dimension. This vector formed is known as edge features of the graphs. In most of the scenerios, edge features are generally been ignored, as they are sometimes less significant then node features. 
 </p>
-
- ## Graph Features
- 
-<p align="justify">
-These are the features, that represents the whole graphs. Now, we can not aquire the features of graphs directly. We indirectly get that from the node and/or the edge features. For sake of simplicity, suppose our graphs has only node features. Now we process these node features, by passing them into some black box, called GNN layers. And we get some more refined representation of the nodes (also known as embeddings, more about embeddings would be discussed in the leter part). Now those embeddings are also nothing but a matrix (stacked vectors of different node embeddings). And we do some kind of an operation, such that we convert this `(N x D)` (where N = number of nodes, D = number of features of each node), into an N dimensional vector, such that each element of the vector represents a collective feature of each node. All togather forming a representation of the graph. The operation done generally in this vase is called `global graph pooling.` More will be covered in later blogs.
- </p>
  
  
 ## Adjacency matrix and Adjacency lists
@@ -130,3 +124,47 @@ For example, if we get three words `{“king”, “queen”, “hello”}`. Her
   Now if we know what embeddings are, then it's easy to know what embeddings in graphs would mean. Suppose we are given a graph, and let us considers, we have node and/or edge features. Initially we have some kind of values of this features, and we can not find any kind of relations of different nodes and/or edges by just examining those features. So we do some kind of operations on graphs, such that we transforms those input features into some kind of representations, and those representations group the similar kind of nodes and/or edges together. If you see in this example figure, then  we will see that initially the nodes of the graph, do have kind of similar kind of values, but we apply some function f such that it captures some kind of schementaics from the neighbours and you can see from the blend of the colour. After some time, we can see that nodes with similar kind of representations stays together with lesser distances, where as nodes with relative less similar representations tends to stay far from each other spatially.  The example picture below to the first one shows an example of the before and after learnimg the  representation of a real world knowledge graphs. 
 </p>
 
+#
+## Graph Features (Graph Embeddings)
+<img src= 
+"https://user-images.githubusercontent.com/58508471/148686564-7cdefbe4-26c1-4bb9-8b69-f14919f2d687.png" 
+         alt="Node features image" 
+         align="right"
+         width="400" height="300"> 
+<p align="justify">
+These are the features, that represents the whole graphs. Now, we can not aquire the features of graphs directly. We indirectly get that from the node and/or the edge features. For sake of simplicity, suppose our graphs has only node features. Now we process these node features, by passing them into some black box, called GNN layers. And we get some more refined representation of the nodes (also known as embeddings, more about embeddings would be discussed in the leter part). Now those embeddings are also nothing but a matrix (stacked vectors of different node embeddings). And we do some kind of an operation, such that we convert this `(N x D)` (where N = number of nodes, D = number of features of each node), into an N dimensional vector, such that each element of the vector represents a collective feature of each node. All togather forming a representation of the graph. The operation done generally in this vase is called `global graph pooling.` More will be covered in later blogs.
+ </p>
+ 
+ #
+ ## Looking into the cycle of a GraphML problem.
+So now we know all the basics and components of a graph, and its essential needs for machine learning. So if we see a typical Graph machine learning scenario, then it can be divided into some steps:
+ ```
+1. Getting the raw data
+2. Formulating the problem as a graph problem
+3. Converting the raw data into a graph data, which is an combination of nodes and meaningful edges.
+4. Using GraphMl methods to get some kind of meaningful representation of the 
+    nodes and/or edges and graph if required
+5. Doing the required level of tasks
+6. Finally the trained model is deployed into the corresponding cloud services.
+
+```
+
+#
+## Application of GraphML
+There are innumerable applications of Graph Machine Learning. Some of them are as follows:
+```
+1. Drug discovery.
+2. Mesh generation (2D, 3D) 
+3. Molecule property detection 
+4. Social circle detection 
+5. Categorization of users / items 
+6. Protein folding problems
+7. New gen Recommender system 
+8. Knowledge graph completions 
+9. Traffic forecast 
+10. Social media connections recommendations for new users.
+```
+And this list goes on. We will discuss on these tasks on more details about their workings and other factors in the upcomming blogs. 
+
+#
+So in this blog, we all have learned why this fields have emerged and growing so fast. We also learned basics about graphs, and different properties and technical terms frequently used in Graph ML. In the next session we will learn about different kinds of tasks of Graph ML, and different types of graphs used in Graph ML. Also in later blogs, we will deep dive into the inner working of Graph ML algorithms and make the models in pytorch or pytorch geometric. So stay tuned. 
