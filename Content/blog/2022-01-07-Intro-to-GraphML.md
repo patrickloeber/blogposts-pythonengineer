@@ -49,10 +49,10 @@ So this is how we generally represent a graph structure. Now we might have read 
 ## Node features
 <p align="justify">
 <img src= 
-"Assets/Anindya/node_feat.png" 
+"https://www.researchgate.net/profile/Hongyang-Gao/publication/326496656/figure/fig1/AS:652202121109508@1532508511971/An-illustration-of-graph-data-There-are-7-nodes-in-this-graph-and-each-node-has-3.png" 
          alt="Food and Computer Image" 
          align="right"
-         width="300" height="300"> 
+         width="300" height="200"> 
 
 Node features are the fundamental input for graph machine learning models. This is simply the feature vector a node of a graph is carrying. Mathematically a graph `G = (V, E)` where, `V` is the set of nodes. All the nodes v those belongs to `V` are a `d-dimensional` vector. Those d-dimensional vectors are the node feature vectors. So if there are N Nodes and every nodes is having d-dimensional features, so the input matrix X is a N x d matrix. Some simple example might include, suppose in a molecular graph, the nodes are the atoms, and each atoms may have several properties like:
 {atomic num, mass num, atomicity, hybridization …}, these are some numerical value, and when stacked together turns out to be a vector.
