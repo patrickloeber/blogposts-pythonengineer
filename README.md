@@ -15,6 +15,12 @@ You can find possible topics on the [Issues](https://github.com/python-engineer/
 
 Once the article is written, open a new Pull Request for it.
 
+## First time?
+
+You can add an image, a description, and up to 4 social links that are listed on the website.
+
+Please also submit a markdown file and a corresponding image (400x400 is preferred). See [authors/patrickloeber.md](authors/patrickloeber.md) and [authors/patrickloeber.png](authors/patrickloeber.png) for my example. Have a look at the raw markdown file to see the frontmatter fields with the author information.
+
 ## Instructions
 
 Articles are written in [Markdown format](https://docs.github.com/en/github/writing-on-github/).
