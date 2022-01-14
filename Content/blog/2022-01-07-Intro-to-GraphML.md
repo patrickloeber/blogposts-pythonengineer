@@ -1,22 +1,22 @@
 <h1 align="center">Introduction to Graph Machine Learning</h1>
 
 <p align="justify">
-This is an introductory blog post, where we will cover all the basics, in order to start with GraphML. Later parts will cover details regarding each of the Graph Machine learning topics and hands on experieces with Graph Neural networks in PyTorch Geometric.
+This is an introductory blog post, where we will cover all the basics terminologies, to get started with GraphML. Later parts will cover details regarding each of the Graph Machine learning topics and hands-on experiences with Graph Neural networks in PyTorch Geometric or dgl.
 </p>
 
 ## Why Graph ML is now a days so much popular?
 <p align="justify">
-The traditional machine learning techniques, like simple linear regression, naive bayes,decision trees,random forests, SVMs, SVRs which are nothing but a blend of statistical Inferences and computational algorithms. But with the rising complexity of the data, w.r.t structural changes and increasing dimensionality, which can be seen in  images, texts, wave-forms, graphs etc, these kind of algorithms started to give less promising and generalised results and facing the classic problems like curse of dimensionality, easy underfitting or overfitting of the models. 
+The traditional machine learning techniques, like simple linear regression, naive Bayes, decision trees, random forests, SVMs, SVRs which are nothing but a blend of statistical Inferences and computational algorithms, seemed to be very appropriate for data with very fewer complexities. But with the rising complexity of the data, w.r.t structural changes and increasing dimensionality, which can be seen in images, texts, wave-forms, graphs, etc, these kinds of algorithms started to give less promising and generalized results and facing classic problems like the curse of dimensionality, easy underfitting or overfitting of the models. 
 </p>
 
 <br>
 <p align="justify">
-So, when traditional machine learning algorithms seemed to getting failed with increasing complexity of data, that time a new subset of Machine learning called deep learning emerged out. And all deep learning algorithms from oldest to the latest one, revolves around the foundations of the architecture called Neural Networks. Based on those two more fundamental architectures, CNN for images and RNN for sequential data emerged out, and were very much successful in learning and generalising universal approximation functions for complex data like images and sequential data like texts, waveforms etc. 
+So, when traditional machine learning algorithms seemed to get failed with the increasing complexity of data, that time a new subset of Machine learning called deep learning emerged out. And all deep learning algorithms from the oldest to the latest one, revolve around the foundations of the working mechanisms of  Neural Networks. Based on the working Neural Networks,  two more fundamental architectures, CNN for images and RNN for sequential data emerged out, and were very successful in learning and generalizing universal approximation functions for complex data like images and sequential data like texts, waveforms, etc. 
 </p>
 
 <br>
 <p align="justify">
-But here comes the twist. Till now, we were discussing were all falling under a category of structured data. These all types of data, like tabular data, image, texts etc are all some kind of ecluidian data. And this ecluidian origin makes their learning/optimization easy and stable. But what about the Graphical data. Graphical data are actually so much ubiqutous in nature, that it can be seen everywehere. Some of the examples are:
+But here comes the twist. Till now, all the methods and types of data (images, text, etc) were falling under the category of structured data. These all types of data, like tabular data, images, texts, etc are all some kind of euclidian data. And this euclidian origin makes their learning/optimization easy and stable. But what about the Graphical data. Graphical data are so much ubiquitous, that they can be seen everywhere. Some of the examples are:
 </p>
 
 1. The internet itself.
@@ -26,12 +26,12 @@ But here comes the twist. Till now, we were discussing were all falling under a 
 5. 3D shapes, etc.
 
 <p align="justify">
-Even the images and texts or the waveforms can be seen and translated as a graphical data. But those type of graphical data are kind of trivial. As those are structured, unlike general graphical data. So predicting something which is based on non-ecluidian subspace is difficult for traditional deep learning or machine learning models. Because, we all know that graphs do not have any certain length or shape. And how we should represent the edges. How to represent the connections. Now here anyone comes with the answer that we can use adjacency matrices. But then think of we are talking at a scale, where we have to compute giant graphs, like facebook's network of users and their friends. So for all these un-certainities, we can not use simple MLP or MLP based models to figure out an optimized solutions. And so for this a new subset of Machine Learning comes into play, which are known as Graph Machine Learning. 
+Even the images and texts or the waveforms can be seen and translated as graphical data. But those types of graphical data are kind of trivial. As those are structured, unlike general graphical data. So predicting something which is based on non-euclidean subspace is difficult for traditional deep learning or machine learning models. Because we all know that graphs do not have any certain length or shape. And how we should represent the edges. How to represent the connections. Now here anyone comes with the answer that we can use adjacency matrices. But then think of the scale of the data, we are talking about. Suppose, we have to compute giant graphs, like facebook's network of users and their friends. So for all these uncertainties, we can not use simple MLP or MLP based models to figure out optimized solutions. And so for this, a new subset of Machine Learning comes into play, which is known as Graph Machine Learning. 
 </P>
 
 ## So, what are Graphs.
 <p align="justify">
-A graph is nothing but a collection of different nodes, which are connected with some links called as edges. Mathematically we can define a graph as :
+A graph is nothing but a collection of different nodes, which are connected with some links called edges. Mathematically we can define a graph as :
 </p>
 
 ```
@@ -43,46 +43,43 @@ Where `G` represents a graph, and `V` represents a collection of nodes: `{ v1, v
 </p>
 
 <p align="justify">
-So this is how we generally represent a graph structure. Now we might have read in some courses like data structures, that graphs are one of the essential data structures for path finding algorithms. This is true. But if we see, then we generally deal with nodes, which are often represeneted as some numbers like 1,2,3 ... or some letters like A,B,C, ... But in Machine learning, the nodes we see, do not contains some single numbers or letters. We represent each of the nodes and sometimes the edges as vectors. And so, these nodes containing some vectors within them are known to be as node features. If edges are also represented as some vectors, then we define that as edge features. Now, sometime people gets confused, by considering edge features representing the connections of the graphs. This is wrong assumption. Edge features are some kind of optional features, we use in graph ML other than node features, which helps us to learn the underlined reprsentation in a more clear way. But these edge features are not the reprentatives of the connection within the nodes. Connections are represented as Adjacency matrix. For example, we can think a chemical molecule as a graph. The nodes represent the atoms, and the edges represents the different types of the bonds, like single bond, double bond etc. So for representing the types of the bond, we require some features, that is represented through edge features. Edge features are not important as node features everytime. Also we will discuss more on details in the later parts.
+
+So this is how we generally represent a graph structure. Now we might have read in some courses like data structures, that graphs are one of the essential data structures for path-finding algorithms. This is true. But if we see, then we generally deal with nodes, which are often represented as some numbers like 1,2,3 ... or some letters like A, B, C, ... But in Machine learning, the nodes we see, do not contain some single numbers or letters. We represent each of the nodes and sometimes the edges as vectors. And so, these nodes containing some vectors within them are known to be node features. If edges are also represented as some vectors, then we define that as edge features. Now, sometimes people get confused, by considering edge features representing the connections of the graphs. This is a wrong assumption. Edge features are some kind of optional features, we use in graph ML other than node features, which helps us to learn the underlined representation more undoubtedly. But these edge features are not the representatives of the connection within the nodes. Connections are represented as the Adjacency matrix. For example, we can think of a chemical molecule as a graph. The nodes represent the atoms, and the edges represent the different types of bonds, like a single bond, double bond, etc. So for representing the types of bond, we require some features, that are represented through edge features. Edge features are not important as node features every time. Also, we will discuss more details in the later parts.
 </p>
 
 ## Node features
-<img src= 
-"https://www.researchgate.net/profile/Hongyang-Gao/publication/326496656/figure/fig1/AS:652202121109508@1532508511971/An-illustration-of-graph-data-There-are-7-nodes-in-this-graph-and-each-node-has-3.png" 
-         alt="Node features image" 
+<img src="https://www.researchgate.net/profile/Hongyang-Gao/publication/326496656/figure/fig1/AS:652202121109508@1532508511971/An-illustration-of-graph-data-There-are-7-nodes-in-this-graph-and-each-node-has-3.png" 
+         alt="Node features image (Source: Research Gate)" 
          align="right"
          width="300" height="200"> 
          
-<p align="justify">
-Node features are the fundamental input for graph machine learning models. This is simply the feature vector a node of a graph is carrying. Mathematically a graph `G = (V, E)` where, `V` is the set of nodes. All the nodes v those belongs to `V` are a `d-dimensional` vector. Those d-dimensional vectors are the node feature vectors. So if there are N Nodes and every nodes is having d-dimensional features, so the input matrix X is a N x d matrix. Some simple example might include, suppose in a molecular graph, the nodes are the atoms, and each atoms may have several properties like:
+
+Node features are the fundamental input for graph machine learning models. This is simply the feature vector a node of a graph is carrying. Mathematically a graph `G = (V, E)` where `V` is the set of nodes. All the nodes v that belongs to `V` are a `d-dimensional` vector. Those d-dimensional vectors are the node feature vectors. So if there are N Nodes and every node is having d-dimensional features, the input matrix X is a N x d matrix. Some simple examples might include, suppose in a molecular graph, the nodes are the atoms, and each atom may have several properties like:
 ```
  atomic number, 
  mass num, atomicity, 
  hybridization of the atom
 ```
 All these are some numerical value features, and when stacked together turns out to be a vector.
-  
-</P>
+
 
 ## Edge Features
 
-<img src= 
-"https://user-images.githubusercontent.com/58508471/148685249-358ee95a-9753-4113-b9d6-53f871daee48.png" 
-         alt="Node features image" 
+<img src= "https://user-images.githubusercontent.com/58508471/148685249-358ee95a-9753-4113-b9d6-53f871daee48.png" 
+         alt="Edge features image (Source: Original" 
          align="left"
          width="400" height="300"> 
          
-<p align="justify">
-Edge features are similar to edge features, but **Edge features do not represent the connection in between the nodes of the graphs** As mentioned in the earlier example, we already know that atoms can be considered some sort of small graphs, and these atoms have different types of bonds, which can be considered as edges of the graphs. So different kinds of properties like:
+
+Edge features are similar to node features, but **Edge features do not represent the connection in between the nodes of the graphs** As mentioned in the earlier example, we already know that atoms can be considered some sort of small graphs, and these atoms have different types of bonds, which can be considered as edges of the graphs. So different kinds of properties like:
   ```
   Type of the bond (single, double, triple),
   Bond angle,
-  Other some sort of chemical properties of the bonds, which have some sort of numerical/boolean values
+  any other sort of chemical properties of the bonds, which have some sort of numerical/boolean values
  ```
-  All of these when stacked upon each others forms a vectors of suppose `m` dimension. This vector formed is known as edge features of the graphs. In most of the scenerios, edge features are generally been ignored, as they are sometimes less significant then node features. 
-</p>
- 
- 
+ All of these when stacked upon each other form a vector of supposed `m` dimension. This vector formed is known as edge features of the graphs. In most of the scenarios, edge features are generally been ignored, as they are sometimes less significant than node features or not available.
+
+  
 ## Adjacency matrix and Adjacency lists
 <img src= 
 "https://user-images.githubusercontent.com/58508471/148685786-2f81bfff-d760-46a8-985c-4709e8c7c79c.png" 
@@ -91,7 +88,7 @@ Edge features are similar to edge features, but **Edge features do not represent
          width="400" height="300"> 
 
 <p align="justify">
-Adjacency matrix is the one way in which we store the connections between the graphs. An element will  be 1 (or a value in case of a weighted graph) if there exists some kind of connection between the nodes else it will be 0. But here is a problem. Consider a giant graph, which is as big as facebook social network. In this case, most of the entries are zeros, making the graph a highly sparse matrix. Algorithms based on that would be highly in-efficient based on space. An alternative to the adjacency matrix is adjacency list or coordinate format. There are different ways to represent adjacency list. For e.g taking a group of tuples, where each tuple represent the nodes source and target node connection.
+The adjacency matrix is the one way in which we store the connections between the graphs. An element will be 1, if there exists some kind of connection between the nodes else it will be 0. But here is a problem. Consider a giant graph, which is as big as a Facebook social network. In this case, most of the entries are zeros, making the graph a highly sparse matrix. Algorithms based on that would be highly in-efficient based on space. An alternative to the adjacency matrix is the adjacency list or coordinate format. There are different ways to represent an adjacency list. For e.g taking a group of tuples, where each tuple represents the node's source and target node connection.
 </p>
 
 <img src= 
@@ -104,44 +101,50 @@ Adjacency matrix is the one way in which we store the connections between the gr
 
   
   
-   We can take two list or a 2d matrix of 2 rows and m-columns, where m is the total number of valid connections, where the first row is the source and the other is the target. The figure shows the connections in COO format of the same graph.
+We can take two lists or a 2d matrix of 2 rows and m-columns, where m is the total number of valid connections, where the first row is the source and the other is the target. The figure shows the connections in the COO format of the same graph.
 </p>
 
 #
 ## Embeddings
 <img src= 
 "https://user-images.githubusercontent.com/58508471/148686294-159b762e-ea7c-4837-af41-21ae4e5762ec.png" 
-         alt="Node features image" 
+         alt="Word Embeddings (Source: " 
          align="left"
          width="400" height="300"> 
 
-This is the one of the most important concept which is not only important in GraphML but also in general. We generally hear this word from NLP field the most. But we know that embedding is everywhere. 
-Defining an embedding is easy, its simply we initially get a high dimensional input data (such as word from corpuses) , and we make a method such that it is translated into low dimensional representations. And this representations learns the schementics of the given input, such that we get to observer that similar kind of input are similar to each others. 
-For example, if we get three words `{“king”, “queen”, “hello”}`. Here `king` and `queen` haver quite a similar kind of embeddings as both represents `persons, elite classes, something based on history etc`. Where as the word `Hello` is a `greetings`, which does not share the similar kind of schementics.
+This is one of the most important concepts which is not only important in GraphML but also in general. We generally hear this word from the NLP field the most. But we know that embedding is everywhere. 
+Defining an embedding is easy, it's simply we initially get a high dimensional input data (such as a word from corpora), and we make a method such that it is translated into low dimensional representations. And this representation learns the schematics of the given input, such that we get to the observer that similar kinds of input are similar to each other. 
+For example, if we get three words `{“king”, “queen”, “hello”}`. Here `king` and `queen` have quite a similar kind of embeddings as both represent `persons, elite classes, something based on history, etc`. Whereas the word `Hello` is a `greetings`, which does not share the similar kind of schematics.
 
 **So What are embeddings in Graphs**
-<p align="justify">
-  Now if we know what embeddings are, then it's easy to know what embeddings in graphs would mean. Suppose we are given a graph, and let us considers, we have node and/or edge features. Initially we have some kind of values of this features, and we can not find any kind of relations of different nodes and/or edges by just examining those features. So we do some kind of operations on graphs, such that we transforms those input features into some kind of representations, and those representations group the similar kind of nodes and/or edges together. If you see in this example figure, then  we will see that initially the nodes of the graph, do have kind of similar kind of values, but we apply some function f such that it captures some kind of schementaics from the neighbours and you can see from the blend of the colour. After some time, we can see that nodes with similar kind of representations stays together with lesser distances, where as nodes with relative less similar representations tends to stay far from each other spatially.  The example picture below to the first one shows an example of the before and after learnimg the  representation of a real world knowledge graphs. 
-</p>
+<img src= 
+"https://www.researchgate.net/profile/Amirhessam-Tahmassebi-2/publication/317055923/figure/fig1/AS:614107501826048@1523426046090/Graph-structures-a-Graphs-excel-at-hiding-their-structure-Graph-clustering-aims-at.png" 
+         alt="Embeddings of nodes (Source: Research Gate)" 
+         align="right"
+         width="400" height="200"> 
+
+Now if we know what embeddings are, then it's easy to know what embeddings in graphs would mean. Suppose we are given a graph, and let us consider, we have node and/or edge features. Initially, we have some kind of values of these features, and we can not find any kind of relations of different nodes by just examining those features. So we do some kind of operations on graphs, such that we transform those input features into some kind of representations, and those representations group the similar kind of nodes together. If you see in this figure (right), then we will see that initially the nodes of the graph are distributed in a random order. We apply some function `f` such that it captures some kind of schematics from the neighbors. After some time, we can see that nodes with similar kinds of representations stay together with lesser distances, whereas nodes with relatively less similar representations tend to stay far from each other spatially.  The example picture below to the first one shows an example of the before and after learning the representation of real-world knowledge graphs. 
+
+
 
 #
-## Graph Features (Graph Embeddings)
+## Graph Embeddings
 <img src= 
 "https://user-images.githubusercontent.com/58508471/148686564-7cdefbe4-26c1-4bb9-8b69-f14919f2d687.png" 
-         alt="Node features image" 
+         alt="Graph Embeddings (Source: Original)" 
          align="right"
          width="400" height="300"> 
-<p align="justify">
-These are the features, that represents the whole graphs. Now, we can not aquire the features of graphs directly. We indirectly get that from the node and/or the edge features. For sake of simplicity, suppose our graphs has only node features. Now we process these node features, by passing them into some black box, called GNN layers. And we get some more refined representation of the nodes (also known as embeddings, more about embeddings would be discussed in the leter part). Now those embeddings are also nothing but a matrix (stacked vectors of different node embeddings). And we do some kind of an operation, such that we convert this `(N x D)` (where N = number of nodes, D = number of features of each node), into an N dimensional vector, such that each element of the vector represents a collective feature of each node. All togather forming a representation of the graph. The operation done generally in this vase is called `global graph pooling.` More will be covered in later blogs.
- </p>
+         
+These are some kind of unified representation, that represents the whole graphs. Now, we can not acquire the features of graphs directly from the graphs. We indirectly get that from the node and/or the edge features. For sake of simplicity, suppose our graphs have only node features. Now we process these node features, by passing them into some black box, called GNN layers. And we get some more refined representation of the nodes Now those embeddings are also nothing but a matrix (stacked vectors of different node embeddings). And we do some kind of an operation, such that we convert this `(N x D)` (where N = the number of nodes, D = number of features of each node), into an N-dimensional vector, such that each element of the vector represents a collective feature of each node. Altogether forming a representation of the graph. The operation done generally, in this case, is called `global graph pooling.` More will be covered in later blogs.
+
  
  #
  ## Looking into the cycle of a GraphML problem.
-So now we know all the basics and components of a graph, and its essential needs for machine learning. So if we see a typical Graph machine learning scenario, then it can be divided into some steps:
+So now we know all the basics and components of a graph and its essential needs for machine learning. So if we see a typical Graph machine learning scenario, then it can be divided into some steps:
  ```
 1. Getting the raw data
 2. Formulating the problem as a graph problem
-3. Converting the raw data into a graph data, which is an combination of nodes and meaningful edges.
+3. Converting the raw data into graph data, which is a combination of nodes and meaningful edges.
 4. Using GraphMl methods to get some kind of meaningful representation of the 
     nodes and/or edges and graph if required
 5. Doing the required level of tasks
@@ -157,14 +160,14 @@ There are innumerable applications of Graph Machine Learning. Some of them are a
 2. Mesh generation (2D, 3D) 
 3. Molecule property detection 
 4. Social circle detection 
-5. Categorization of users / items 
+5. Categorization of users/items 
 6. Protein folding problems
-7. New gen Recommender system 
+7. New-gen Recommender system 
 8. Knowledge graph completions 
 9. Traffic forecast 
 10. Social media connections recommendations for new users.
 ```
-And this list goes on. We will discuss on these tasks on more details about their workings and other factors in the upcomming blogs. 
+And this list goes on. We will discuss these tasks in more detail about their workings and other factors in the upcoming blogs.
 
 #
-So in this blog, we all have learned why this fields have emerged and growing so fast. We also learned basics about graphs, and different properties and technical terms frequently used in Graph ML. In the next session we will learn about different kinds of tasks of Graph ML, and different types of graphs used in Graph ML. Also in later blogs, we will deep dive into the inner working of Graph ML algorithms and make the models in pytorch or pytorch geometric. So stay tuned. 
+So in this blog, we all have learned why these fields have emerged and grown so fast. We also learned the basics of graphs, and different properties and technical terms frequently used in Graph ML. In the next session, we will learn about different kinds of tasks of Graph ML, and different types of graphs used in Graph ML. Also in later blogs, we will deep dive into the inner working of Graph ML algorithms and make the models in PyTorch geometric or in DGL (Deep Graph Library). So stay tuned. 
