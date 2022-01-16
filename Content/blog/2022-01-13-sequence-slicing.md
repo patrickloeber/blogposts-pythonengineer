@@ -9,12 +9,14 @@ author: Pratik Choudhari
 
 Slicing of sequences in Python is a crucial and easy to learn concept. In this article we will see different types of slicing and understand them with examples.
 
-### About Sequences
+## About Sequences
 
 Sequence data structures are iterable and the elements of a sequence can be accessed via their index except `set` and `frozenset`.
+
 Slicing relies on indexing to specify the portion of sequence to extract data from.
 
 As slicing is allowed only for indexable sequences the following data structures are eligible:
+
 - list
 - tuple
 - bytearray
@@ -22,20 +24,22 @@ As slicing is allowed only for indexable sequences the following data structures
 - range
 - byte sequences
 
-Of these, string and byte sequences are immutable but indexed.
-
-### The Slice Notation:
+## The Slice Notation:
 
 ```python
 my_list[start: end: step]
 ```
+
 Alternatively, `slice()` can be used 
+
 ```python
 my_list[slice(start, end, step)]
 ```
 
-Here, `start`, `end` and `step` are integers. `start` defines the index to start slicing from and continue till index `end - 1`(end index is excluded). 
+Here, `start`, `end` and `step` are integers. `start` defines the index to start slicing from and continue till index `end - 1`(end index is excluded).
+
 There are multiple variations of using slice notation:
+
 1. `[:, end]`: Select portion from sequence start till `end - 1`
 2. `[start: ]`: Select portion from start till the end of sequence
 3. `[:]`: Create a copy of sequence
@@ -76,7 +80,7 @@ Output:
 ```
 
 
-#### The `step` in Slicing
+### The `step` in Slicing
 `step` defines the number of index to move forward while slicing an object. If `step` is not specified, default value is taken as 1 which means move without skipping any index.
 
 Example:
