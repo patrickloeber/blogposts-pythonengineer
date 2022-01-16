@@ -24,7 +24,7 @@ Please also submit a markdown file and a corresponding image (400x400 is preferr
 ## Instructions
 
 Articles are written in [Markdown format](https://docs.github.com/en/github/writing-on-github/).
-An example markdown file is [2021-07-21-python-for-loops.md](Content/blog/2021-07-21-python-for-loops.md).
+An example markdown file is [2021-07-21-python-for-loops.md](Content/posts/2021-07-21-python-for-loops.md).
 
 ## File name and folder
 Use a name in the following format:
@@ -33,7 +33,7 @@ Use a name in the following format:
 YYYY-MM-DD-some-topic-name.md
 ```
 
-If not specified otherwise, articles should be created in the folder [Content/blog](Content/blog).
+If not specified otherwise, articles should be created in the folder [Content/posts](Content/posts).
 
 ## Markdown Front Matter
 Markdown frontmatter must have these fields.
