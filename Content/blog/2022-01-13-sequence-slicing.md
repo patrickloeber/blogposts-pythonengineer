@@ -40,13 +40,13 @@ Here, `start`, `end` and `step` are integers. `start` defines the index to start
 
 There are multiple variations of using slice notation:
 
-1. `[:, end]`: Select portion from sequence start till `end - 1`
-2. `[start: ]`: Select portion from start till the end of sequence
-3. `[:]`: Create a copy of sequence
+- `[:, end]`: Select portion from sequence start till `end - 1`
+- `[start: ]`: Select portion from start till the end of sequence
+- `[:]`: Create a copy of sequence
 
 Examples:
 
-1. With start and end
+### 1. With start and end
 ```python
 colors = ["red", "green", "blue", "yellow", "cyan"]
 print(colors[1: 3])
@@ -57,7 +57,7 @@ Output:
 ['green', 'blue']
 ```
 
-2. With end only
+### 2. With end only
 ```python
 colors = ["red", "green", "blue", "yellow", "cyan"]
 print(colors[: 4])
@@ -68,7 +68,7 @@ Output:
 ['red', 'green', 'blue', 'yellow']
 ```
 
-3. With start only
+### 3. With start only
 ```python
 colors = ["red", "green", "blue", "yellow", "cyan"]
 print(colors[2:])
@@ -80,7 +80,7 @@ Output:
 ```
 
 
-### The `step` in Slicing
+## The `step` in Slicing
 `step` defines the number of index to move forward while slicing an object. If `step` is not specified, default value is taken as 1 which means move without skipping any index.
 
 Example:
@@ -104,5 +104,3 @@ Output:
 ```console
 acegikmoqsuwy
 ```
-
-

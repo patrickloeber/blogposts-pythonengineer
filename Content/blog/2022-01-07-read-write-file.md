@@ -13,9 +13,9 @@ The term `file` can be defined as a container that is used to store data on comp
 
 In general, when working with files, the following process is followed:
 
-1. Opening of a file
-2. Read/Write content
-3. Closing of file
+- 1. Opening of a file
+- 2. Read/Write content
+- 3. Closing of file
 
 ## 1. Opening a file
 [`open()`](https://docs.python.org/3/library/functions.html#open) function is used to open a file in Python, the return value of `open()` is a python file pointer or a handler that points to the file on the computer. Hence, any further operations on a file have to be performed via a python file object.
@@ -33,11 +33,11 @@ Python supports multiple modes to open a file, all are listed below:
 - \+ : open for updating (reading and writing)
 
 
-When *mode* is not specified, the default mode is "r"
- 
+When *mode* is not specified, the default mode is "r".
+
 Example:
 
-## 1. Opening in reading mode
+### Opening in reading mode
 ```python
 file_pointer = open("/home/user/foo.txt")
 print(file_pointer)
@@ -48,7 +48,7 @@ Output:
 <_io.TextIOWrapper name='foo.txt' mode='r' encoding='UTF-8'>
 ```
 
-2. Opening in write mode
+### Opening in write mode
 ```python
 file_pointer = open("/home/user/foo.txt", "w")
 print(file_pointer)
@@ -62,7 +62,7 @@ Output:
 ## 2. Reading file contents
 File handlers create using `open()` are used to read file contents using three methods, we will understand the working of each with examples.
 
-### - fp.read()
+### fp.read()
 `read()` is used to read the contents of a file, this method takes an optional `size` argument, which specifies the number of characters to read. If no size is specified entire file contents are read by default.
 
 Example:
@@ -109,7 +109,7 @@ Output:
 'ry colo'
 ```
 
-### - fp.readline()
+### fp.readline()
 Reads a file line by line, returns a line as string. `fp.readline()` too maintains a cursor and therefore on re-execution yields next line.
 a
 Example:
@@ -125,7 +125,7 @@ Output:
 'Primary colors:\n'
 ```
 
-### - fp.readlines()
+### fp.readlines()
 `fp.readlines()` returns a list of lines from a file. Instead of using loops for getting all lines through `fp.readline()`, this function will provide user with a collection of all lines.
 
 Example:
@@ -199,8 +199,8 @@ Example:
 
 ```python
 with open("/home/user/foo.txt") as file_pointer:
-  contents = file_pointer.readlines()
-  print(contents)
+    contents = file_pointer.readlines()
+    print(contents)
 ```
 
 Output:
