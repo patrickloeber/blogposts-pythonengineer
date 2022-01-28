@@ -1,6 +1,6 @@
 ---
 name: Shweta Goyal
-image: Shweta.png
+image: Shweta.jpg
 description: Learning something new everyday. 
 twitter: "https://twitter.com/Shweta_go"
 website: "https://shwetagoyal.tech/"
