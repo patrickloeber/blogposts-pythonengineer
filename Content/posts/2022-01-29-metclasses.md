@@ -9,7 +9,7 @@ author: Pratik Choudhari
 
 Everything is an object in python, including classes. Hence, if classes are an object, they must be created by another class also called as Metaclass.
 
-![class hierarchy](/images/metaclass.jpg)
+![class hierarchy](../images/metaclass.png)
 
 Metaclass is an advanced python concept and is not used in day-to-day programming tasks. They allow a user to precisely define a class state, change its attributes and control method behaviour. 
 
