@@ -64,7 +64,8 @@ random.seed(0)
 **random.seed** takes an integer parameter. If you pass a different parameter other than 0, you will get a different random element(s).
 
 ## Secrets library
-The Secrets library is preferred over the Random library since it is more secure. Like the random library, it is a built-in python library and you do not have to install any dependencies.
+The Secrets library is preferred over the Random library since it is more secure. Like the random library, it is a built-in python library and you do not have to install any dependencies. However if you are using a version below Python 3.6, you will have to install a backport of the secrets module. You can read more about it [here](https://github.com/scaleway/python2-secrets)
+
 
 ### 1. Random Index
 ```python
