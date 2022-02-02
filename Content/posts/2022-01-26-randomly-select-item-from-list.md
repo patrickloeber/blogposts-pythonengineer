@@ -64,10 +64,8 @@ random.seed(0)
 **random.seed** takes an integer parameter. If you pass a different parameter other than 0, you will get a different random element(s).
 
 ## Secrets library
-The Secrets library is preferred over the Random library since it is more secure. You can install it using the following command
-```bash
-pip3 install secrets
-```
+The Secrets library is preferred over the Random library since it is more secure. Like the random library, it is a built-in python library and you do not have to install any dependencies.
+
 ### 1. Random Index
 ```python
 import secrets
