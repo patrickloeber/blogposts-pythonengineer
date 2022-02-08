@@ -1,6 +1,6 @@
 ---
 title: Inplace file editing with fileinput module
-date: 2022-02-08 00:00
+date: 2022-02-10 00:00
 description: This post shows how to edit one or more files inplace using the fileinput module
 tags: Python, Basics
 path: inplace-file-editing
@@ -15,7 +15,7 @@ In this post, you'll learn how to use the `fileinput` module to make changes and
 
 It is always a good idea to know where to find the documentation. Here's a quote from [docs.python: fileinput](https://docs.python.org/3/library/fileinput.html):
 
->This module implements a helper class and functions to quickly write a loop over standard input or a list of files. If you just want to read or write one file see `open()`.
+> This module implements a helper class and functions to quickly write a loop over standard input or a list of files. If you just want to read or write one file see `open()`.
 
 And here's the specific method you'll be learning to use in this post:
 
@@ -28,7 +28,7 @@ fileinput.input(files=None, inplace=False, backup='', *, mode='r',
 
 Assume you have two text files as shown below:
 
-```bash
+```console
 $ ls *.txt
 notes.txt  tools.txt
 
@@ -58,7 +58,7 @@ with fileinput.input(inplace=True) as f:
 
 Note that the input filenames aren't specified in the above program. Instead, you'll pass them as command line arguments as shown below:
 
-```bash
+```console
 $ python3 change_path.py *.txt
 
 $ cat tools.txt
@@ -79,7 +79,7 @@ If there's no file to process, `fileinput.input()` will automatically use `stdin
 
 Here's an example to show how the program discussed in the previous section will work with `stdin` data:
 
-```bash
+```console
 $ echo '/home/user/programs/create_venv.py' | python3 change_path.py
 /home/user/bin/create_venv.py
 ```
@@ -101,7 +101,7 @@ with fileinput.input(files=ip_files, inplace=True) as f:
 
 Now that you've already specified the files to be modified, you just have to execute the program without any additional CLI arguments:
 
-```bash
+```console
 $ python3 file_list.py
 ```
 
@@ -113,7 +113,7 @@ Ideally, you should create backups of the files being modified so that you can r
 
 Assume you want to change `blue` to `brown` for the file shown below:
 
-```bash
+```console
 $ cat colors.txt
 red blue green
 teal magenta
@@ -134,7 +134,7 @@ with fileinput.input(files='colors.txt', inplace=True, backup='.orig') as f:
 
 After you execute the above program, you'll see that there's a copy of the original file.
 
-```bash
+```console
 $ python3 inplace_with_backups.py
 
 # modified file
