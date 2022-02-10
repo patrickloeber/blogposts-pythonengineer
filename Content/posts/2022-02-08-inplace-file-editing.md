@@ -1,7 +1,7 @@
 ---
-title: Inplace file editing with fileinput module
+title: In-place file editing with fileinput module
 date: 2022-02-10 00:00
-description: This post shows how to edit one or more files inplace using the fileinput module
+description: This post shows how to edit one or more files in-place using the fileinput module.
 tags: Python, Basics
 path: inplace-file-editing
 author: Sundeep Agarwal
