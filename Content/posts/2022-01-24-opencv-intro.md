@@ -2,7 +2,7 @@
 title: Getting Started with OpenCV in Python
 date: 2022-01-29 00:00
 description: Learn how to get started with OpenCV in Python.
-tags: Python
+tags: Python, Computer Vision
 path: opencv-python-intro
 author: Shweta Goyal
 ---
