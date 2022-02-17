@@ -1,13 +1,11 @@
 ---
-titlt: Complex Numbers in Python
-date: 2022-02-16 00:00
-description: Learn the basics of Complex Numbers in Python
-tags: Python 
-path: 
+title: Complex Numbers in Python
+date: 2022-02-18 00:00
+description: Learn the basics of complex numbers in Python.
+tags: Python, Basics
+path: complex-numbers-python
 author: Shweta Goyal
 ---
-
-# Complex Numbers in Python
 
 Python not only works with real numbers but also works with complex numbers. It has many use cases in mathematics. Python helps to tackle and manipulate them.
 
@@ -15,7 +13,9 @@ Complex numbers are created from two real numbers. You can create it directly or
 
 Let’s see the syntax of the complex function:
 
-`complex([real[, imag]])`
+```python
+complex([real[, imag]])
+```
 
 It consists of two arguments:
 
@@ -86,7 +86,7 @@ print("Division of numbers:", z1 / z2)
 
 The outputs are:
 
-```terminal
+```console
 Addition of numbers: (7+11j)
 Subtraction of numbers: (5+3j)
 Multiplication of numbers: (-22+31j)
@@ -97,13 +97,13 @@ Real numbers and imaginary numbers are calculated separately.
 
 You can also perform the exponential operation with the binary operator(**) but you can’t perform it with the `math` module.
 
-**Note:** Complex numbers do not support floor division(//) and comparison operators(<, >, <=, =>).
+**Note:** Complex numbers do not support floor division(`//`) and comparison operators(`<, >, <=, =>`).
 
 ## Python `cmath` module functions
 
 The `cmath` module in python helps to use advanced mathematical functions like trigonometry, logarithmic, power and log functions, etc. You can use the `math` module to use these functions but only for real numbers as it does not support complex numbers. The `cmath` module helps to use these functions for complex numbers.
 
-The `cmath` module also consists of constants like pi, e, inf, nan, and so on that can be used in calculations. You can learn more functions and constants from the [official site](https://docs.python.org/3/library/cmath.html).
+The `cmath` module also consists of constants like *pi*, *e*, *inf*, *nan*, and so on that can be used in calculations. You can learn more functions and constants from the [official site](https://docs.python.org/3/library/cmath.html).
 
 Let’s see some of the functions that can be performed on the complex numbers:
 
@@ -136,7 +136,7 @@ print("Inverse Hyperbolic Sine Value:", cmath.asinh(z))
 
 The outputs are:
 
-```terminal
+```console
 e^z: (-22.720847417619233+49.645957334580565j)
 log2(z): (2.1609640474436813+0.6689021062254881j)
 Sine Value: (-2.8472390868488278-2.3706741693520015j)
@@ -157,28 +157,28 @@ Let’s see some examples of complex numbers:
 import cmath
 
 # Check if they are finite
-print(cmath.isfinite(4 + 1j))               # True
+print(cmath.isfinite(4 + 1j))        # True
 
 # Check if they are infinite
-print(cmath.isinf(4 + 1j))                  # False
+print(cmath.isinf(4 + 1j))           # False
 
 # Above result is false as z is already finite, it can't be infinite. 
 # We can make it infinite by making real number infinite.
-print(cmath.isinf(cmath.inf + 1j))           # True        
+print(cmath.isinf(cmath.inf + 1j))   # True        
 
 # Check if they are nan
-print(cmath.isnan(4 + 1j))                   # False
+print(cmath.isnan(4 + 1j))           # False
 
 # Above result is false because the real number is true. 
 # You can make the result by changing the real number to nan.
 print(cmath.isnan(cmath.nan + 1j))            # True
 
 # Check if two numbers are close 
-print(cmath.isclose(1 + 1j, 1.02 + 0.8j, rel_tol=0.5))          #True
-print(cmath.isclose(1 + 1j, 1.02 + 0.8j, abs_tol=0.05))         # False
+print(cmath.isclose(1 + 1j, 1.02 + 0.8j, rel_tol=0.5))  #True
+print(cmath.isclose(1 + 1j, 1.02 + 0.8j, abs_tol=0.05)) # False
 ```
 
-> rel_tol is relative tolerance which is maximum allowed difference and must be greater than zero.
+`rel_tol` is relative tolerance which is maximum allowed difference and must be greater than zero.
 abs_tol is absolute tolerance which is minimum allowed difference and must be at least zero or near to zero.
 
 You can inverse the results by changing the real numbers.
@@ -211,7 +211,7 @@ print("NaN complex value:", cmath.nanj)
 
 The outputs are:
 
-```terminal
+```console
 pi: 3.141592653589793
 e: 2.718281828459045
 Positive infinity: inf
