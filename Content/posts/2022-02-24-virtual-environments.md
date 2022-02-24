@@ -13,9 +13,9 @@ Using virtual environments users can manage libraries without conflicting with o
 
 ## What are virtual environments?
 
-Every Python installation creates root site-directories, which means there is always one environment that can be used system-wide. Different projects have different requirements and therefore using the root Python installation will lead to frequent Install/Uninstall of packages, this creates a lot of fri2022-01-29-virtual-environmentsction while working ultimately wasting time and effort.
+Every Python installation creates root site-directories, which means there is always one environment that can be used system-wide. Different projects have different requirements and therefore using the root Python installation will lead to frequent Install/Uninstall of packages, this creates a lot of friction while working ultimately wasting time and effort.
 
-![Virtual environments](/images/2022-01-29-virtual-environments/venv.jpg)
+![Virtual environments](/Resources/images/2022-01-29-virtual-environments/venv.jpg)
 
 Virtual environments aim to isolate the Python execution and the dependency environment from the root environment, using this tool users can use different environments for different projects with zero conflicts. There can be different versions of a package installed in two different virtual environments. 
 
