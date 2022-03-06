@@ -1,13 +1,11 @@
 ---
 titlt: Dataclasses in Python
 date: 2022-03-04 00:00
-description: Learn the basics of Dataclasses in Python
-tags: Python 
-path: 
+description: Learn the basics of dataclasses in Python
+tags: Python, Basics
+path: dataclass-python
 author: Shweta Goyal
 ---
-
-# Dataclasses in Python
 
 [Dataclasses](https://docs.python.org/3/library/dataclasses.html) are a bit different from Python classes because Python classes encapsulate data and functions together but Data classes focus more on data rather than the functionality part. Data classes come with [decorator](https://wiki.python.org/moin/PythonDecorators#:~:text=A%20decorator%20is%20the%20name,of%20the%20function%20being%20decorated.) and functions that automatically adds generated [special methods](https://docs.python.org/3/glossary.html#term-special-method) such as __init__() and __repr__() to user-defined classes. These classes help to reduce boilerplate code and more functionality.
 
