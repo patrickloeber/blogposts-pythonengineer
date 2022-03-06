@@ -1,11 +1,13 @@
 ---
-titlt: datetime Module in Python
-date: 2022-02-27 00:00
-description: Learn the basics of datetime module in Python
+title: Complete Guide to the datetime Module in Python
+date: 2022-03-07 00:00
+description: Learn the basics of the datetime module in Python and how to convert from strings to datetime.
 tags: Python, Basics
 path: datetime-module
 author: Shweta Goyal
 ---
+
+Learn the basics of the datetime module in Python and how to convert from strings to datetime.
 
 To work with date and time, you can import a module named **datetime** which comes built-in with Python. The date and time do not have a data type on their own in Python instead Python provides classes to work with date and time.
 
@@ -202,10 +204,70 @@ There are various methods available that you can use like `utcoffset`, `dst`, `f
 
 ## timezone class
 
-[timezone](https://docs.python.org/3/library/datetime.html#datetime.timezone) class implements the tzinfo abstract base class and is defined by the fixed offset from the UTC. This helps to represent timezone according to a specific region and to handle the timezones, we use [pytz module](http://pytz.sourceforge.net/).
+[timezone](https://docs.python.org/3/library/datetime.html#datetime.timezone) class implements the tzinfo abstract base class (i.e. it is a subclass of tzinfo)and is defined by the fixed offset from the UTC. This helps to represent timezone according to a specific region and to handle the timezones:
 
-Also, it would be good to know about strftime and strptime from their [official site](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior) as the strftime method creates a string representing a time and strptime method creates a datetime object from a string representing a date and a time object.
+```python
+from datetime import timezone, timedelta
+
+tz = timezone(offset=timedelta(hours=3))
+print(tz)
+```
+
+Output
+
+```console
+UTC+03:00
+```
+
+It is also worth mentioning, that for some more timezone calculations sometimes the third-party package [pytz module](https://pypi.org/project/pytz/) can be useful.
+
+*pytz* brings the Olson tz database into Python. This library allows accurate and cross platform timezone calculations using Python 2.4 or higher. It also solves the issue of ambiguous times at the end of daylight saving time.
+
+## Converting date objects to string with `strftime()`
+
+Converting from date objects to strings can be achieved with `strftime()`:
+
+```python
+from datetime import datetime
+
+now = datetime.now()
+
+now_str = now.strftime("%Y-%m-%d, %H:%M:%S")
+print(now_str)
+```
+
+Output:
+
+```console
+2022-03-06, 10:21:33
+```
+
+For a full list of all formatting rules see the [official site](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior).
+
+## Converting strings to datetime with `strptime()`
+
+To convert a string to a datetime object, we can use `strptime()`:
+
+```python
+from datetime import datetime
+
+date_string = "2022/03/06 10:21:33"
+date_object = datetime.strptime(date_string, "%Y/%m/%d %H:%M:%S")
+
+print(date_object)  # This is of <class 'datetime.datetime'>
+```
+
+Output
+
+```console
+2022-03-06 10:21:33
+```
+
+Note that if the given format and the string do not match, this would raise a `ValueError`, e.g.:
+```console
+ValueError: time data '2022-03-06, 10:21:33' does not match format '%Y/%m/%d %H:%M:%S'
+```
 
 ## Conclusion
 
-In this article, you have learned about the six different classes in the datetime module and to know more about it, you can visit Python’s official site.
+In this article, you have learned about the six different classes in the datetime module and how you can convert strings to datetime objects and vice versa.
