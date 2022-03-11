@@ -5,6 +5,6 @@ description: I’m a Python enthusiast, Creator of Quo. Proficient in APIs, CLIs
 twitter: "https://twitter.com/gerrishon_s"
 website: "https://gerrishon.medium.com/"
 github: "https://github.com/gerrishons"
-linkedin: "https://linkedIn.com/in/gerrishon
+linkedin: "https://linkedIn.com/in/gerrishon"
 youtube:
 ---
