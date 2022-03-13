@@ -224,6 +224,7 @@ from quo.prompt import Prompt
 from quo.keys import Bind
  
 bind = Bind()
+session = Prompt() 
 # Print "Hello world" when ctrl-h is pressed
 @bind.add("ctrl-h")
 def _(event):
