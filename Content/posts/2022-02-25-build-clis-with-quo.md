@@ -245,7 +245,7 @@ from quo.dialog import MessageBox
 
 MessageBox(
         title="Message pop up window",
-        text="Do you want to continue?\nPress ENTER to quit.").run()                                       
+        text="Do you want to continue?\nPress ENTER to quit.")                                    
 ```
 
 The above code produces the following output
@@ -254,11 +254,11 @@ The above code produces the following output
 2) Example of a prompt box dialog
 
 ```python
-from quo.dialog import PromptBox
+from quo.dialog import InputBox
 
-PromptBox(
-          title="PromptBox shenanigans",
-          text="What Country are you from?:").run()
+InputBox(
+          title="InputBox shenanigans",
+          text="What Country are you from?:")
 ```
 
 ![Prompt Box](https://github.com/secretum-inc/quo/raw/master/docs/images/promptbox.png)
