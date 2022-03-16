@@ -1,5 +1,5 @@
 ---
-title: How to use poetry to manage dependecies in Python 
+title: How to use poetry to manage dependencies in Python 
 date: 2022-03-16 00:00
 description: Learn how poetry can be initialised in a project and used to resolve dependencies.
 tags: Python, Basics
