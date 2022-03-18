@@ -220,16 +220,15 @@ A key binding is an association between a physical key on a keyboard and a param
 
 ```python
 from quo import echo
+from quo.keys import bind
 from quo.prompt import Prompt
-from quo.keys import Bind
  
-bind = Bind()
 session = Prompt() 
 # Print "Hello world" when ctrl-h is pressed
 @bind.add("ctrl-h")
 def _(event):
     echo("Hello, World!")
-session.prompt(">>", bind=bind)
+session.prompt(">>")
 ```
 
 Read more on [Key bindings](https://quo.readthedocs.io/en/latest/kb.html).
@@ -295,26 +294,18 @@ A collection of reusable components for building full screen applications.
 Widget that displays the given text. It is not editable or focusable.
 
 ```python
-from quo.console import Console
-from quo.keys import Bind
-from quo.layout import Layout
+from quo import container
+from quo.keys import bind
 from quo.widget import Label
 
-root = Label("Hello, World", style="fg:black bg:red")
-  
-layout = Layout(root)
+content = Label("Hello, World", style="fg:black bg:red")
   
 # Ctrl-c to exit
-bind = Bind()
-  
 @bind.add("ctrl-c")
 def _(event):
    event.app.exit()
 
-Console(
-    layout=layout,
-    bind=bind,
-    full_screen=True).run()
+container(content, bind=True, full_screen=True)
 
 ```
 
