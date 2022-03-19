@@ -46,6 +46,7 @@ Run the following to test Quo output on your terminal:
 ```console
 python -m quo
 ```
+![test](https://github.com/scalabli/quo/raw/master/docs/images/test.png)
 
 ## Printing
 
@@ -81,14 +82,13 @@ Alternatively, you can import [print](https://quo.readthedocs.io/en/latest/print
 
 ```python
 from quo import print
-from quo.text import Text
 
-print(Text('<b>This is bold</b>'))
-print(Text('<i>This is italic</i>'))
-print(Text('<u>This is underlined</u>'))                        
+print('<b>This is bold</b>')
+print('<i>This is italic</i>')
+print('<u>This is underlined</u>')                      
 # Colors from the ANSI palette.
-print(Text('<red>This is red</red>'))
-print(Text('<style fg="green" bg="red">Green on red background</stlye>'))
+print('<red>This is red</red>')
+print('<style fg="green" bg="red">Green on red background</stlye>')
 ```
 
 ## Prompts
