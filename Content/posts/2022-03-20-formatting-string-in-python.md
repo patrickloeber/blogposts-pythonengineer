@@ -1,31 +1,31 @@
 ---
-titlt: How to format string in Python
-date: 2022-03-20 00:00
-description: Learn the different ways to format a string in Python
-tags: Python Basic
-path: 
+title: How to format Strings in Python
+date: 2022-03-22 00:00
+description: Learn the different ways to format a String in Python.
+tags: Python, Basics
+path: string-formatting
 author: Shweta Goyal
 ---
-
-# Formatting Strings in Python
 
 Formatting a string is a very important tool to know when you are coding in Python. Whenever you write a program, you have to format the output into a string before you print it or display it in some form.
 
 There are times when you want to control the formatting of your output rather than simply printing it. There are four different ways to perform string formatting:
 
-## Formatting String with the % Operator
+## Formatting Strings with the % Operator
 
 This method is the oldest method of string formatting which uses the modulo(%) operator. Let’s see an example:
 
 ```python
-
 name = 'world'
 print('Hello, %s!' % name)
  
 year = 2022
 print('Hello %s, this year is %d.' % (name, year))
+```
 
-# Output:
+Output:
+
+```console
 Hello, world!
 Hello world, this year is 2022.
 ```
@@ -34,14 +34,13 @@ This operator formats a set of variables enclosed in a tuple together with a for
 
 In the second example, there are two arguments specifiers - the first one represents a string and the second represents an integer, and the actual string value is enclosed in a tuple (parentheses).
 
-## Formatting String with the format() method
+## Formatting Strings with the format() method
 
 This method inserts the specified values inside the string's placeholder. The placeholder is defined by a pair of curly braces  { }. The placeholder can be used as the named indexes {name}, numbered indexes {0}, or empty placeholders { }.
 
 Let’s understand through an example:
 
 ```python
-
 # Default / empty arguments
 print('Hello {}, this year is {}.'.format('world', 2022))
  
@@ -53,10 +52,11 @@ print('Hello {name}, this year is {yr}.'.format(name='world', yr=2022))
  
 # Mixed arguments
 print('Hello {0}, this year is {yr}.'.format('world', yr=2022))
+```
 
+Output:
 
-# Output:
-
+```console
 Hello world, this year is 2022.
 Hello world, this year is 2022.
 Hello world, this year is 2022.
@@ -83,11 +83,13 @@ Let’s go through with the example:
 
 ```python
 # Simple example
- 
 name = 'world'
 print(f'Hello, {name}!')
+```
 
-# Output:
+Output:
+
+```console
 Hello, world!
 ```
 
@@ -95,11 +97,12 @@ This was a simple example. This method also evaluates expressions in real-time. 
 
 ```python
 # Performing an arithmetic operation
- 
 print(F'Two minus Ten is {2 - 10}')
+```
 
+Output:
 
-# Output:
+```console
 Two minus Ten is -8
 ```
 
@@ -110,17 +113,19 @@ This method is very easy and powerful as the real-time implementation makes it f
 This is the standard library, all you have to do is to import the `Template` class from Python’s built-in string module. It is simple but less powerful. Let’s see an example.
 
 ```python
-
 from string import Template
  
 t = Template('Hello $name, this year is $yr')
 print(t.substitute(name='world', yr=2022))
+```
 
-# Output:
+Output:
+
+```console
 Hello world, this year is 2022
 ```
 
-This format uses $ as a placeholder. First, you have to create a template that is used to pass the variables, and then later in the print statement, we pass the parameters into the template string. `.substitute` is used to replace placeholders.
+This format uses $ as a placeholder. First, you have to create a template that is used to pass the variables, and then later in the print statement, we pass the parameters into the template string. `.substitute()` is used to replace placeholders.
 
 ## Conclusion
 
