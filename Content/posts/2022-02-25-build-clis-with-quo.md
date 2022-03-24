@@ -46,6 +46,7 @@ Run the following to test Quo output on your terminal:
 ```console
 python -m quo
 ```
+![test](https://github.com/scalabli/quo/raw/master/docs/images/test.png)
 
 ## Printing
 
@@ -81,14 +82,13 @@ Alternatively, you can import [print](https://quo.readthedocs.io/en/latest/print
 
 ```python
 from quo import print
-from quo.text import Text
 
-print(Text('<b>This is bold</b>'))
-print(Text('<i>This is italic</i>'))
-print(Text('<u>This is underlined</u>'))                        
+print('<b>This is bold</b>')
+print('<i>This is italic</i>')
+print('<u>This is underlined</u>')                      
 # Colors from the ANSI palette.
-print(Text('<red>This is red</red>'))
-print(Text('<style fg="green" bg="red">Green on red background</stlye>'))
+print('<red>This is red</red>')
+print('<style fg="green" bg="red">Green on red background</stlye>')
 ```
 
 ## Prompts
@@ -220,15 +220,15 @@ A key binding is an association between a physical key on a keyboard and a param
 
 ```python
 from quo import echo
+from quo.keys import bind
 from quo.prompt import Prompt
-from quo.keys import Bind
  
-bind = Bind()
+session = Prompt() 
 # Print "Hello world" when ctrl-h is pressed
 @bind.add("ctrl-h")
 def _(event):
     echo("Hello, World!")
-session.prompt(">>", bind=bind)
+session.prompt(">>")
 ```
 
 Read more on [Key bindings](https://quo.readthedocs.io/en/latest/kb.html).
@@ -244,7 +244,7 @@ from quo.dialog import MessageBox
 
 MessageBox(
         title="Message pop up window",
-        text="Do you want to continue?\nPress ENTER to quit.").run()                                       
+        text="Do you want to continue?\nPress ENTER to quit.")                                    
 ```
 
 The above code produces the following output
@@ -253,11 +253,11 @@ The above code produces the following output
 2) Example of a prompt box dialog
 
 ```python
-from quo.dialog import PromptBox
+from quo.dialog import InputBox
 
-PromptBox(
-          title="PromptBox shenanigans",
-          text="What Country are you from?:").run()
+InputBox(
+          title="InputBox shenanigans",
+          text="What Country are you from?:")
 ```
 
 ![Prompt Box](https://github.com/secretum-inc/quo/raw/master/docs/images/promptbox.png)
@@ -294,26 +294,18 @@ A collection of reusable components for building full screen applications.
 Widget that displays the given text. It is not editable or focusable.
 
 ```python
-from quo.console import Console
-from quo.keys import Bind
-from quo.layout import Layout
+from quo import container
+from quo.keys import bind
 from quo.widget import Label
 
-root = Label("Hello, World", style="fg:black bg:red")
-  
-layout = Layout(root)
+content = Label("Hello, World", style="fg:black bg:red")
   
 # Ctrl-c to exit
-bind = Bind()
-  
 @bind.add("ctrl-c")
 def _(event):
    event.app.exit()
 
-Console(
-    layout=layout,
-    bind=bind,
-    full_screen=True).run()
+container(content, bind=True, full_screen=True)
 
 ```
 
