@@ -1,13 +1,13 @@
 ---
-title: How to count occurrence of an element in a list in Python 
-date: 2022-03-24 00:00
-description: Learn three different ways in which occurrence of an element in a list can be counted.
+title: How to count the occurrence of an element in a List in Python 
+date: 2022-04-03 00:00
+description: Learn four different ways in which the occurrence of an element in a List can be counted.
 tags: Python, Basics
 path: count-element-list
 author: Pratik Choudhari
 ---
 
-A common task when working with lists is to count the occurrence of an element. 
+A common task when working with lists is to count the occurrence of an element.
 
 There are a few ways through which we can achieve this, in this article we will go through these methods and understand them with examples.
 
@@ -50,7 +50,7 @@ Output:
 
 ```console
 3
-``` 
+```
 
 It is important to note that the `count()` method makes a complete pass over the list every time it is ran, therefore for counting multiple elements use the `collections.Counter` approach.
 
@@ -77,7 +77,7 @@ Counter({3: 3, 1: 1, 0: 1, 4: 1, 8: 1})
 
 ## Using `operator.countOf()`
 
-`operator` is amongst the standard libraries that come preinstalled with Python. Its `countOf()` method can be used to count the occurrence of an element in a list. 
+`operator` is amongst the standard libraries that come preinstalled with Python. Its `countOf()` method can be used to count the occurrence of an element in a list.
 
 Example:
 
@@ -94,4 +94,3 @@ Output:
 ```console
 3
 ```
-
