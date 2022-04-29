@@ -185,7 +185,7 @@ def hello(count: int, name: str):
        for x in range(count):
            print(f"Hello {name}!")
 
-if __name__ == "__main__:
+if __name__ == "__main__":
           hello()
 ```
 
@@ -228,7 +228,7 @@ session = Prompt()
 @bind.add("ctrl-h")
 def _(event):
     echo("Hello, World!")
-session.prompt(">>")
+session.prompt(">> ")
 ```
 
 Read more on [Key bindings](https://quo.readthedocs.io/en/latest/kb.html).
@@ -271,7 +271,6 @@ Function [Table](https://quo.readthedocs.io/en/latest/table.html) offers a numbe
 Example
 
 ```python
-from quo import echo
 from quo.table import Table
 
 data = [
@@ -280,7 +279,8 @@ data = [
   ["Bob", "M", 19],
   ["Dave", "M", 24]
 ]
-echo(Table(data))
+
+Table(data)
 ```
 
 ![tabulate](https://raw.githubusercontent.com/secretum-inc/quo/master/docs/images/table.png)
