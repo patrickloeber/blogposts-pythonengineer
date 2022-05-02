@@ -1,7 +1,7 @@
 ---
 title: Difference between the equality operator and is operator in Python
 date: 2022-04-29 00:00
-description: Learn the difference between equality operator and is operator in Python
+description: Learn the difference between the equality operator and is operator in Python.
 tags: Python, Basics
 path: equality-vs-is-operator
 author: Shweta Goyal

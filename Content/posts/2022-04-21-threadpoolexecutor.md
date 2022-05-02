@@ -1,7 +1,7 @@
 ---
 title: How to use ThreadPoolExecutor in Python
 date: 2022-05-02 00:00
-description: Optimize your code using thread pools
+description: Optimize your code using thread pools.
 tags: Python, Basics
 path: threadpoolexecutor
 author: Pratik Choudhari

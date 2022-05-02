@@ -1,7 +1,7 @@
 ---
 title: Difference between byte objects and string in Python
 date: 2022-05-01 00:00
-description: Learn the difference between byte objects and string in Python
+description: Learn the difference between byte objects and string in Python.
 tags: Python, Basics
 path: byte-vs-string-objects
 author: Shweta Goyal

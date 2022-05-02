@@ -1,7 +1,7 @@
 ---
 title: How to work with ZIP files in Python
 date: 2022-04-30 00:00
-description: Learn ZIP manipulation
+description: Learn ZIP file manipulation with the zipfile module.
 tags: Python, Basics
 path: python-zip
 author: Pratik Choudhari
