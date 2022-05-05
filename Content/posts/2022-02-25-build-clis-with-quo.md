@@ -70,8 +70,8 @@ Try this:
 ```python
  from quo import echo
 
- echo(f"Quo is ", nl=False)
- echo(f"scalable", bg="red", fg="black") 
+ echo("Quo is ", nl=False)
+ echo("scalable", bg="red", fg="black") 
 ```
 
 ![Scalable](https://github.com/secretum-inc/quo/raw/master/pics/scalable.png)
@@ -149,17 +149,15 @@ session.prompt('Which country are you from?: ')
 Auto suggestion is a way to propose some input completions to the user. Usually, the input is compared to the history and when there is another entry starting with the given text, the completion will be shown as gray text behind the current input. Pressing the right arrow → or ctrl-e will insert this suggestion, alt-f willinsert the first word of the suggestion.
 
 ```python
+from quo.history import MemoryHistory
 from quo.prompt import Prompt
-from quo.completion import AutoSuggestFromHistory
-from quo.history import InMemoryHistory
 
-history = InMemoryHistory(
-history.append("import os")
-history.append('print("hello")') 
-history.append('print("world")')  
-history.append("import path"
+MemoryHistory.append("import os")
+MemoryHistory.append('print("hello")') 
+MemoryHistory.append('print("world")')  
+MemoryHistory.append("import path")
 
-session = Prompt(auto_suggest=AutoSuggestFromHistory(), history=history)
+session = Prompt(history=MemoryHistory, suggest="history")
 
 while True:
    session.prompt('> ')
@@ -295,16 +293,11 @@ Widget that displays the given text. It is not editable or focusable.
 
 ```python
 from quo import container
-from quo.keys import bind
 from quo.widget import Label
 
 content = Label("Hello, World", style="fg:black bg:red")
   
-# Ctrl-c to exit
-@bind.add("ctrl-c")
-def _(event):
-   event.app.exit()
-
+# Press `ctrl-c` to exit
 container(content, bind=True, full_screen=True)
 
 ```
