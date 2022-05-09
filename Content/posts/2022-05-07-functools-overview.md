@@ -113,7 +113,7 @@ Output:
 89
 ```
 
-## @functools.lru_cache(max_size=None)
+## @functools.lru\_cache(maxsize=None)
 
 A better alternative to the `@cache` is `@lru_cache` because the latter can be bounded to a specific size using the keyword argument maxsize.
 
