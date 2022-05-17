@@ -1,7 +1,7 @@
 ---
 title: What is functools in Python?
 date: 2022-05-09 00:00
-description: Introduction to the higher-order functions library of Python
+description: Introduction to the higher-order functions library of Python.
 tags: Python, Basics
 path: functools-overview
 author: Pratik Choudhari
