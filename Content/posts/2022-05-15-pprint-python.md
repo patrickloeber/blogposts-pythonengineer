@@ -15,7 +15,7 @@ This article will explore how `pprint` is used and what formatting options it pr
 
 This is the most famous function from the `pprint` module.
 
-- `pprint.pprint(object, stream=None, indent=1, width=80, depth=None, *, compact=False, sort_dicts=True, underscore_numbers=False)`
+#### `pprint.pprint(object, stream=None, indent=1, width=80, depth=None, *, compact=False, sort_dicts=True, underscore_numbers=False)`
 
 It passes the arguments and keyword arguments to the `PrettyPrinter` class constructor. Following are the arguments accepted by the function:
 
@@ -33,9 +33,9 @@ Example:
 ```python
 from pprint import pprint
 
-nested_dict = [{"language": "Python", "application": ["Data Science", "Automation", "Scraping", "API"]}, {"language": "Javascript", "application": ["Web Development", "API", "Web Apps", "Games"]}]
+data = [{"language": "Python", "application": ["Data Science", "Automation", "Scraping", "API"]}, {"language": "Javascript", "application": ["Web Development", "API", "Web Apps", "Games"]}]
 
-pprint(nested_dict, indent=3)
+pprint(data, indent=3)
 ```
 
 Output:
