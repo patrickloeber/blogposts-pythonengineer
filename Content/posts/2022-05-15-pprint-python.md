@@ -7,20 +7,26 @@ path: pprint-python
 author: Pratik Choudhari
 ---
 
-[`pprint`](https://docs.python.org/3/library/pprint.html) is used to print a beautified representation of an object in Python. It is available as a standard library that comes preinstalled with Python interpreter. This article will explore how `pprint` is used and what formatting options it provides.
+[pprint](https://docs.python.org/3/library/pprint.html) is used to print a beautified representation of an object in Python. It is available as a standard library that comes preinstalled with Python.
 
-## 1. pprint.pprint(object)
+This article will explore how `pprint` is used and what formatting options it provides.
 
-This is the most famous function from the `pprint` module, it passes the arguments and keyword arguments to the `PrettyPrinter` class constructor. Following are the arguments accepted by the function:
+## 1. *pprint.pprint(object)*
 
-- object: Python object to print
-- indent: The amount of indentation to use in every new nesting level
-- width: Maximum number of characters that can be printed in a line
-- depth: Specifies the number of nesting levels to print, after the depth is surpassed `...` characters are printed
-- sort_dicts: Sort dictionaries based on keys
-- underscore_numbers: Add `_` separator to every thousandths place in a number
-- compact: If true, adjust items of a sequence in the width else print each element in a new line
-- stream: Stream to which data is to be sent like `StringIO` or `BytesIO`, defaults to `sys.stdout`
+This is the most famous function from the `pprint` module.
+
+- `pprint.pprint(object, stream=None, indent=1, width=80, depth=None, *, compact=False, sort_dicts=True, underscore_numbers=False)`
+
+It passes the arguments and keyword arguments to the `PrettyPrinter` class constructor. Following are the arguments accepted by the function:
+
+- `object`: Python object to print
+- `indent`: The amount of indentation to use in every new nesting level
+- `width`: Maximum number of characters that can be printed in a line
+- `dept`h: Specifies the number of nesting levels to print, after the depth is surpassed `...` characters are printed
+- `sort_dicts`: If this is False, dictionaries will be displayed with their keys in insertion order, otherwise the dict keys will be sorted.
+- `underscore_numbers`: Add `_` separator to every thousandths place in a number
+- `compac`t: If true, adjust items of a sequence in the width else print each element in a new line
+- `stream`: Stream to which data is to be sent like `StringIO` or `BytesIO`, defaults to `sys.stdout`
 
 Example:
 
@@ -29,7 +35,7 @@ from pprint import pprint
 
 nested_dict = [{"language": "Python", "application": ["Data Science", "Automation", "Scraping", "API"]}, {"language": "Javascript", "application": ["Web Development", "API", "Web Apps", "Games"]}]
 
-pprint(nested_dict, indent=3) # 2 extra indents while printing dictionary
+pprint(nested_dict, indent=3)
 ```
 
 Output:
@@ -41,11 +47,25 @@ Output:
       'language': 'Javascript'}]
 ```
 
+Example with and without `sort_dicts`:
+
+```python
+from pprint import pprint
+
+values = {'a': 1, 'd': 4, 'b': 2}
+
+pprint(values)
+# {'a': 1, 'b': 2, 'd': 4}
+
+pprint(values, sort_dicts=False)
+# {'a': 1, 'd': 4, 'b': 2}
+```
+
 ## pprint.pformat(object)
 
 `pformat()` is similar to `pprint()`, the distinctions are:
 
-- pprint sends formatted data to a stream whereas pformat() returns a string with formatted data
+- pprint sends formatted data to a stream whereas pformat returns a string with formatted data
 - pformat does not take stream argument, all other arguments remain as they were
 
 Example:
