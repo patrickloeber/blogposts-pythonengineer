@@ -1,6 +1,6 @@
 ---
 title: How to use pprint in Python?
-date: 2022-05-15 00:00
+date: 2022-05-17 00:00
 description: Exploring the pprint library using explainations and examples
 tags: Python, Basics
 path: pprint-python
