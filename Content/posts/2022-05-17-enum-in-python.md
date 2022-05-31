@@ -2,7 +2,7 @@
 title: Enum in Python
 date: 2022-05-18 00:00
 description: Learn how to use Enum in Python.
-tags: Python, Basic
+tags: Python, Basics
 path: enums-python
 author: Shweta Goyal
 ---
