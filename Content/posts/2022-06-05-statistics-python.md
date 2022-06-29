@@ -1,7 +1,7 @@
 ---
-title: Exploring statistics library in Python
-date: 2022-06-05 00:00
-description: Learn all functions in statistics module with examples.
+title: Exploring the statistics module in Python
+date: 2022-06-19 00:00
+description: Learn all functions in the statistics module with examples.
 tags: Python, Basics
 path: statistics-python
 author: Pratik Choudhari
@@ -18,6 +18,7 @@ In this section, we will be discussing functions related to mean, median, mode a
 ### Averages
 
 The statistics module provides users with four functions pertaining to averages:
+
 - mean()
 - fmean()
 - geometric_mean()
@@ -38,11 +39,8 @@ numbers = [random.randint(1, 100) for _ in range(10)]
 print("Generated random list:", numbers)
 
 print("Mean:", st.mean(numbers))
-
 print("Fast Mean:", st.fmean(numbers))
-
 print("Geometric Mean:", st.geometric_mean(numbers))
-
 print("Harmonic Mean:", st.harmonic_mean(numbers))
 ```
 
@@ -51,7 +49,7 @@ Output:
 Generated random list: [69, 23, 10, 25, 98, 49, 98, 70, 49, 25]
 Mean: 51.6
 Fast Mean: 51.6
-Geometric Mean: 69, 23, 10, 25, 98, 49, 98, 70, 49, 25
+Geometric Mean: 41.729187578364716
 Harmonic Mean: 31.89983771747745
 ```
 
@@ -77,11 +75,8 @@ numbers = sorted([random.randint(1, 100) for _ in range(10)])
 print("Generated random list:", numbers)
 
 print("Median:", st.median(numbers))
-
 print("Lower Median:", st.median_low(numbers))
-
 print("Higher Median:", st.median_high(numbers))
-
 print("Grouped Median:", st.median_grouped(numbers))
 ```
 
@@ -98,6 +93,7 @@ Grouped Median: 69.5
 ### Mode and Quantiles
 
 Mode is a measure of central location, a collection of nominal values can have one or more modes.
+
 - mode(): returns a single value of most occurring element occurring first in data
 - multimode(): returns a list of all modes in a collection
 
@@ -118,7 +114,6 @@ print("Quantiles:", st.quantiles(numbers))
 numbers = [1, 1, 1, 2, 3, 3, 4, 4, 4, 5, 5]
 
 print("Mode:", st.mode(numbers))
-
 print("Multi Mode:", st.multimode(numbers))
 ```
 
@@ -134,12 +129,13 @@ Multi Mode: [1, 4]
 ## Variance and Standard Deviation
 
 A distribution has two types of variance and standard deviation namely population and sample.
+
 - pvariance(): returns variance of population
 - pstdev(): square root of pvariance() result
 - variance(): returns variance of sample
 - stdev(): square root of variance() result
 
-pvariance() and pstdev() optionally takes an argument `mu` which should be the mean of data, if any other value is provided variance is calculated around that point.
+pvariance() and pstdev() optionally takes an argument `mu` which should be the mean of data. If any other value is provided, the variance is calculated around that point.
 
 variance() and stdev() optionally takes an argument `xbar` which should strictly be the mean of data.
 
@@ -154,11 +150,8 @@ numbers = sorted([random.randint(1, 100) for _ in range(10)])
 print("Generated random list:", numbers)
 
 print("Population variance:", st.pvariance(numbers))
-
 print("Population standard deviation:", st.pstdev(numbers))
-
 print("Sample variance:", st.variance(numbers))
-
 print("Sample standard deviation:", st.stdev(numbers))
 ```
 
@@ -175,6 +168,7 @@ Sample standard deviation: 21.940323101034263
 ## Relation between two inputs
 
 This module provides three ways to check relationship between two inputs, using these functions we can estimate value of another input based on value of one input. Following are the functions available:
+
 - covariance(): returns measure of joint variability between two inputs
 - correlation(): returns pearson correlation coefficient value between -1 to +1 
 - linear_regression(): calculates the slope and intercept from linear regression concept
@@ -188,7 +182,6 @@ x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 y = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
 
 print("Covariance:", st.covariance(x, y))
-
 print("Correlation:", st.correlation(x, y))
 
 slope, intercept = st.linear_regression(x, y)
