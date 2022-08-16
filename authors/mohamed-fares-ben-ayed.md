@@ -1,0 +1,7 @@
+---
+name: Mohamed Fares Ben Ayed
+image: mohamed-fares-ben-ayed.png
+description: Software engineering who loves to share knowledge
+twitter: "https://twitter.com/*_MFBA*_"
+github: "https://github.com/BenAyedSeeksAI"
+---
