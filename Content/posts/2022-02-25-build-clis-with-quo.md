@@ -139,7 +139,7 @@ A prompt with a bottom toolbar
 
 Read more on [Prompt](https://quo.readthedocs.io/en/latest/prompt.html).
 
-## Completions
+## Quo Completions
 
 ### Autocompletion
 
@@ -174,6 +174,100 @@ while True:
 ```
 
 Read more on [Completions](https://quo.readthedocs.io/en/latest/prompt.html#completion).
+
+## Quo Console
+
+For more control over quo terminal content, import and construct a `Console` object.
+
+
+``Bar``
+
+Draw a horizontal bar with an optional title, which is a good way of dividing your terminal output in to sections.
+
+```python
+
+ from quo.console import Console
+
+ console = Console()
+ console.bar("I am a bar", style="fg:red bg:yellow")
+
+```
+
+``Launching Applications``
+
+Quo supports launching applications through `Console.launch`
+
+**Example 1**
+
+```python
+
+ from quo.console import Console
+
+ console = Console()
+ console.launch("https://quo.rtfd.io/")
+
+```
+
+**Example 2**
+
+```python
+
+ from quo.console import Console
+
+ console = Console()
+ console.launch("/home/path/README.md", locate=True)
+
+```
+
+``Rule``
+
+Used for drawing a horizontal line.
+
+**Example 1**
+
+```python
+
+ from quo.console import Console
+
+ console = Console()
+ console.rule(
+
+```
+
+**Example 2**
+
+A multicolored line.
+
+```python
+
+ from quo.console import Console
+
+ console = Console()
+ console.rule(multicolored=True)
+
+```
+![Multicolored](https://quo.readthedocs.io/en/latest/_images/rulemulticolored.jpg)
+
+
+``Spin``🔁
+
+Quo can create a context manager that is used to display a spinner on stdout as long as the context has not exited
+
+```python
+
+ import time
+ from quo.console import Console
+
+ console = Console()
+
+ with console.spin():
+           time.sleep(3)
+           print("Hello, World")
+
+```
+Read more on [Console](https://quo.readthedocs.io/en/latest/console.html)
+
+
 
 ## Documenting Scripts
 
