@@ -32,6 +32,9 @@ Quo requires Python `3.8` or later.
 - [x] Key Binders
 
 ## Getting Started
+## Quo Library
+Quo contains a number of builtin features you c
+an use to create elegant output in your CLI.
 
 ### Installation
 
@@ -91,9 +94,7 @@ print('<red>This is red</red>')
 print('<style fg="green" bg="red">Green on red background</stlye>')
 ```
 
-## Prompts
-
-### Quo prompt
+## Quo Prompts
 
 - Using ``quo.prompt`` method.
 
@@ -107,6 +108,8 @@ prompt("What is your name?")
 
 - Using ``quo.prompt.Prompt`` object
 
+**Example 1**
+
 ```python
 from quo.prompt import Prompt
    
@@ -114,20 +117,27 @@ session = Prompt()
 session.prompt("Type something:") 
 ```
 
-Read more on [Prompt](https://quo.readthedocs.io/en/latest/prompt.html).
+**Example 2**
 
-## ``Launching Applications``
-
-Quo supports launching applications through `Console.launch`. This can be used to open the default application associated with a URL or filetype.
+A prompt with a bottom toolbar
 
 ```python
-from quo.console import Console
-   
-console = Console()
-console.launch("https://quo.rtfd.io/")
+
+  from quo.prompt import Prompt
+  from quo.text import Text
+
+  def toolbar():
+        return Text('This is a <b><style bg="red">Toolbar</style></b>!')
+
+  # Returns a callable
+  session = Prompt(bottom_toolbar=toolbar)
+  session.prompt('> ')
+
 ```
 
-Read more on [Console](https://quo.readthedocs.io/en/latest/console.html).
+![validate](https://raw.githubusercontent.com/scalabli/quo/master/docs/images/bottom-toolbar.png)
+
+Read more on [Prompt](https://quo.readthedocs.io/en/latest/prompt.html).
 
 ## Completions
 
@@ -195,7 +205,65 @@ python example.py --help
 
 ![Help Text](https://raw.githubusercontent.com/secretum-inc/quo/master/docs/images/help-text.png)
 
-## Progress
+## Quo Dialogs
+
+This is a high level API for displaying dialog boxes to the user for informational purposes, or get input from the user.
+
+**Example 1**
+
+A MessageBox dialog.
+
+```python
+from quo.dialog import MessageBox
+
+MessageBox(
+        title="Message pop up window",
+        text="Do you want to continue?\nPress ENTER to quit.")                                    
+```
+
+![Message Box](https://github.com/secretum-inc/quo/raw/master/docs/images/messagebox.png)
+
+**Example 2**
+
+A InputBox dialog
+
+```python
+from quo.dialog import InputBox
+
+InputBox(
+          title="InputBox shenanigans",
+          text="What Country are you from?:")
+```
+
+![Prompt Box](https://github.com/secretum-inc/quo/raw/master/docs/images/promptbox.png)
+
+Read more on [Dialogs](https://quo.readthedocs.io/en/latest/dialogs.html).
+
+
+## Quo Key Binding🔐
+
+A key binding is an association between a physical key on akeyboard and a parameter.
+
+```python
+
+ from quo import echo
+ from quo.keys import bind
+ from quo.prompt import Prompt
+
+ session = Prompt()
+
+ # Print "Hello world" when ctrl-h is pressed
+ @bind.add("ctrl-h")
+ def _(event):
+      echo("Hello, World!")
+
+ session.prompt("")
+
+```
+
+Read more on [Key bindings](https://quo.readthedocs.io/en/latest/kb.html)
+
+## Quo Progress📈
 Creating a new progress bar can be done by calling the class **ProgressBar**
 The progress can be displayed for any iterable. This works by wrapping the iterable (like ``range``) with the class **ProgressBar**
 
@@ -212,96 +280,178 @@ with ProgressBar() as pb:
 
 Read more on [Progress](https://quo.readthedocs.io/en/latest/progress.html).
 
-## Key Binding
 
-A key binding is an association between a physical key on a keyboard and a parameter.
 
-```python
-from quo import echo
-from quo.keys import bind
-from quo.prompt import Prompt
- 
-session = Prompt() 
-# Print "Hello world" when ctrl-h is pressed
-@bind.add("ctrl-h")
-def _(event):
-    echo("Hello, World!")
-session.prompt(">> ")
-```
+## Quo Tables
 
-Read more on [Key bindings](https://quo.readthedocs.io/en/latest/kb.html).
+This offers a number of configuration options to set the look and feel of the table, including how borders are rendered and the style and alignment of the columns.
 
-## Dialogs
-
-This is a high level API for displaying dialog boxes to the user for informational purposes, or get input from the user.
-
-1) Example of a message box dialog.
+**Example 1**
 
 ```python
-from quo.dialog import MessageBox
 
-MessageBox(
-        title="Message pop up window",
-        text="Do you want to continue?\nPress ENTER to quit.")                                    
+ from quo.table import Table
+
+ data = [
+     ["Name", "Gender", "Age"],
+     ["Alice", "F", 24],
+     ["Bob", "M", 19],
+     ["Dave", "M", 24]
+  ]
+
+ Table(data)
+
 ```
+![tabulate](https://raw.githubusercontent.com/scalabli/quo/master/docs/images/tables/table.png)
 
-The above code produces the following output
-![Message Box](https://github.com/secretum-inc/quo/raw/master/docs/images/messagebox.png)
+**Example 2**
 
-2) Example of a prompt box dialog
+Right aligned table
 
 ```python
-from quo.dialog import InputBox
 
-InputBox(
-          title="InputBox shenanigans",
-          text="What Country are you from?:")
+ from quo.table import Table
+
+ data = [
+    ["Name", "Gender", "Age"],
+    ["Alice", "F", 24],
+    ["Bob", "M", 19],
+    ["Dave", "M", 24]
+    ]
+ Table(data, align="right")
+
 ```
 
-![Prompt Box](https://github.com/secretum-inc/quo/raw/master/docs/images/promptbox.png)
+![tabulate](https://raw.githubusercontent.com/scalabli/quo/master/docs/images/tables/right-table.png)
 
-Read more on [Dialogs](https://quo.readthedocs.io/en/latest/dialogs.html).
+**Example 3**
 
-## Tables
-
-Function [Table](https://quo.readthedocs.io/en/latest/table.html) offers a number of configuration options to set the look and feel of the table, including how borders are rendered and the style and alignment of the columns.
-
-Example
+Colored table
 
 ```python
-from quo.table import Table
 
-data = [
-  ["Name", "Gender", "Age"],
-  ["Alice", "F", 24],
-  ["Bob", "M", 19],
-  ["Dave", "M", 24]
-]
+ from quo.table import Table
 
-Table(data)
+ data = [
+    ["Name", "Gender", "Age"],
+    ["Alice", "F", 24],
+    ["Bob", "M", 19],
+    ["Dave", "M", 24]
+    ] 
+    
+ Table(data, style="fg:green")
+
 ```
 
-![tabulate](https://raw.githubusercontent.com/secretum-inc/quo/master/docs/images/table.png)
 
-## Widgets
+![tabulate](https://raw.githubusercontent.com/scalabli/quo/master/docs/images/tables/colored-table.png)
 
+**Example 4**
+
+Grid table
+
+```python
+
+ from quo.table import Table
+
+ data = [
+    ["Name", "Gender", "Age"],
+    ["Alice", "F", 24],
+    ["Bob", "M", 19],
+    ["Dave", "M", 24]
+    ]
+
+ Table(data, theme="grid")
+
+```
+
+
+![tabulate](https://raw.githubusercontent.com/scalabli/quo/master/docs/images/tables/grid-table.png)
+
+
+
+
+Read more on [Table](https://quo.readthedocs.io/en/latest/table.html)
+
+
+## Quo Widgets
 A collection of reusable components for building full screen applications.
 
-### Label
+``Frame`` 🎞️
+
+Draw a border around any container, optionally with a title.
+
+```python
+
+ from quo import container
+ from quo.widget import Frame, Label
+
+ content = Frame(
+             Label("Hello, World!"),
+               title="Quo: python")
+
+ #Press Ctrl-C to exit
+ container(content, bind=True, full_screen=True)
+
+```
+![Frame](https://raw.githubusercontent.com/scalabli/quo/master/docs/images/widgets/frame.png)
+
+``Label``
 
 Widget that displays the given text. It is not editable or focusable.
 
-```python
-from quo import container
-from quo.widget import Label
+**Example 1**
 
-content = Label("Hello, World", style="fg:black bg:red")
-  
-# Press `ctrl-c` to exit
-container(content, bind=True, full_screen=True)
+This will occupy a minimum space in your terminal
+
+```python
+
+ from quo import container
+ from quo.widget import Label
+
+ content = Label("Hello, World", style="fg:black bg:red")
+
+ container(content)
+
+```
+**Example 2**
+
+This will be a fullscreen application
+
+```python
+
+ from quo import container
+ from quo.widget import Label
+
+ content = Label("Hello, World", style="fg:black bg:red")
+
+ # Press Ctrl-C to exit
+ container(content, bind=True, full_screen=True)
 
 ```
 
-Read more on [Widgets](https://quo.readthedocs.io/en/latest/widgets.html).
+**Example 3**
+
+Full screen application using a custom binding key.
+
+```python
+
+ from quo import container
+ from quo.keys import bind
+ from quo.widget import Label
+
+ content = Label("Hello, World", style="fg:black bg:red")
+
+ #Press Ctrl-Z to exit
+ @bind.add("ctrl-z")
+ def _(event):
+     event.app.exit()
+
+ container(content, bind=True, full_screen=True)
+
+```
+
+Read more on [Widgets](https://quo.readthedocs.io/en/latest/widgets.html)
+
 
 Quo is _simple_. If you know Python you can  easily use quo and it can integrate with just about anything.
