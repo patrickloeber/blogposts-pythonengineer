@@ -2,7 +2,7 @@
 title: Learn about Pandas groupby operations - From Zero to Hero
 date: 2022-08-30 00:00
 description: Master the Pandas groupby operations in multiple steps with examples from easy to advanced ones.
-tags: Python, Pandas
+tags: Python, pandas
 path: pandas-groupby-operations
 author: Mohamed Fares Ben Ayed
 ---
